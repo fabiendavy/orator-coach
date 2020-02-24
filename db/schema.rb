@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_140008) do
+ActiveRecord::Schema.define(version: 2020_02_24_153750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "observers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "session_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["session_id"], name: "index_observers_on_session_id"
+    t.index ["user_id"], name: "index_observers_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.string "type"
+    t.bigint "observer_id", null: false
+    t.bigint "session_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["observer_id"], name: "index_reviews_on_observer_id"
+    t.index ["session_id"], name: "index_reviews_on_session_id"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "speaker_id"
+    t.index ["speaker_id"], name: "index_sessions_on_speaker_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +51,15 @@ ActiveRecord::Schema.define(version: 2020_02_24_140008) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "observers", "sessions"
+  add_foreign_key "observers", "users"
+  add_foreign_key "reviews", "observers"
+  add_foreign_key "reviews", "sessions"
+  add_foreign_key "sessions", "users", column: "speaker_id"
 end
