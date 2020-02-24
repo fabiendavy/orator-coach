@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 2020_02_24_153750) do
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "speaker_id"
-    t.index ["speaker_id"], name: "index_sessions_on_speaker_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,5 +61,4 @@ ActiveRecord::Schema.define(version: 2020_02_24_153750) do
   add_foreign_key "observers", "users"
   add_foreign_key "reviews", "observers"
   add_foreign_key "reviews", "sessions"
-  add_foreign_key "sessions", "users", column: "speaker_id"
 end
