@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_153750) do
+ActiveRecord::Schema.define(version: 2020_02_25_094536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,11 +28,9 @@ ActiveRecord::Schema.define(version: 2020_02_24_153750) do
     t.text "content"
     t.string "type"
     t.bigint "observer_id", null: false
-    t.bigint "session_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["observer_id"], name: "index_reviews_on_observer_id"
-    t.index ["session_id"], name: "index_reviews_on_session_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -60,5 +58,4 @@ ActiveRecord::Schema.define(version: 2020_02_24_153750) do
   add_foreign_key "observers", "sessions"
   add_foreign_key "observers", "users"
   add_foreign_key "reviews", "observers"
-  add_foreign_key "reviews", "sessions"
 end
