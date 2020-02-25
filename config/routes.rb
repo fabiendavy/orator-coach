@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/library", to: "pages#library"
 
 
-  resources :sessions, only: [ :new, :create, :show ]
+  resources :recordings, only: [ :new, :create, :show ]
   resources :observers, only: [ :new, :create ] do
     resources :reviews, only: [ :new, :create ] do
       member do
