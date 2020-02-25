@@ -5,6 +5,14 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @recordings = Recording.where(speaker: current_user)
+  end
+
+  def stats
+
+  end
+
+  def library
 
   end
 end
