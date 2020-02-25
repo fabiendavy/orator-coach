@@ -1,0 +1,19 @@
+<div class="container new-recording">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 col-md-8 col-lg-4 d-flex flex-column align-items-center">
+      <h3 class="text-center">SELECT YOUR ROLE</h3>
+
+      <div class="recording-choice">
+        <%= simple_form_for @recording do |f| %>
+          <%#= f.input :status, as: :hidden, value: "joining" %>
+          <%= f.submit "Speaker", class: "recording-btn" %>
+        <% end %>
+      </div>
+
+      <div class="recording-choice d-flex justify-content-center">
+        <%= link_to "Observer", new_observer_path, class: "recording-btn text-center" %>
+      </div>
+
+    </div>
+  </div>
+</div>
