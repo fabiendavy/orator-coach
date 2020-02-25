@@ -2,7 +2,6 @@ class RecordingsController < ApplicationController
   #:new, :create, :show
   def new
     @recording = Recording.new
-    @observer = Observer.new
     @joining_key = Faker::Name.middle_name.downcase
   end
 
@@ -10,7 +9,7 @@ class RecordingsController < ApplicationController
     @recording = Recording.new
     @recording.speaker = current_user
     @recording.status = "joining"
-    raise
+    @recording.access_key = params[:access_key]
     if @recording.save
       redirect_to recording_path(@recording)
     else

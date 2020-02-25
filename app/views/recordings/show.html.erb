@@ -4,12 +4,10 @@
       <h3 class="text-center">ACCESS KEY</h3>
 
       <div class="recording-key">
-        <%= @joining_key %>
+        <%= @recording.access_key %>
       </div>
 
-      <div class="">
-        <%= link_to "✓", new_observer_path, class: "recording-btn text-center" %>
-      </div>
+      <%= link_to "✓", recording_path(@recording), class: "recording-validation text-center", id: "btn-to-pending" %>
 
     </div>
   </div>
