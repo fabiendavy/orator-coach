@@ -2,7 +2,7 @@ class RecordingsController < ApplicationController
   #:new, :create, :show
   def new
     @recording = Recording.new
-    @joining_key = Faker::Name.middle_name.downcase
+    @access_key = Faker::Name.middle_name.downcase
   end
 
   def create
