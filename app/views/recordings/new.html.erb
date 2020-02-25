@@ -11,7 +11,7 @@
       </div>
 
       <div class="recording-choice d-flex justify-content-center">
-        <%= link_to "OBSERVER", new_observer_path, class: "recording-btn text-center" %>
+        <%= link_to "OBSERVER", new_observer_path(:access_key => @joining_key), class: "recording-btn text-center" %>
       </div>
 
     </div>

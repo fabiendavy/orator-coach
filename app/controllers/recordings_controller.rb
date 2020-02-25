@@ -10,7 +10,6 @@ class RecordingsController < ApplicationController
     @recording = Recording.new
     @recording.speaker = current_user
     @recording.status = "joining"
-    raise
     if @recording.save
       redirect_to recording_path(@recording)
     else
