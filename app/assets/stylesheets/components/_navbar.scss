@@ -8,5 +8,42 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 200px;
+}
+
+#navbar {
+  background-color: $light-gray;
+}
+
+.green-link {
+  color: $light-green;
+  text-decoration: none;
+  &:hover {
+  color: $dark-green;
+  text-decoration: none;
+  &:active {
+    text-decoration: underline;
+  }
+  }
+}
+
+.green-button {
+ color: $dark-gray;
+ background-color: $light-green;
+ border-radius: 30px;
+ text-decoration: none;
+ padding: 15px;
+ font-weight: bold;
+ &:hover {
+  background-color: $dark-green;
+  text-decoration: none;
+  color: $white;
+ }
+}
+
+.no-decoration{
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
 }
