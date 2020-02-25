@@ -5,13 +5,13 @@
 
       <div class="recording-choice">
         <%= simple_form_for @recording do |f| %>
-          <%= hidden_field_tag(:key, @joining_key) %>
+          <%= hidden_field_tag(:access_key, @access_key) %>
           <%= f.submit "SPEAKER", class: "recording-btn" %>
         <% end %>
       </div>
 
       <div class="recording-choice d-flex justify-content-center">
-        <%= link_to "OBSERVER", new_observer_path, class: "recording-btn text-center" %>
+        <%= link_to "OBSERVER", new_observer_path(:recording => @recording), class: "recording-btn text-center" %>
       </div>
 
     </div>
