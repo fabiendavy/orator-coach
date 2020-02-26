@@ -23,5 +23,6 @@ require("channels")
 // ----------------------------------------------------
 import "bootstrap";
 import { videoRecording } from "../plugins/mediaStream";
+import "./showRecording"
 
 videoRecording();

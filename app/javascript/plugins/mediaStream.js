@@ -28,12 +28,12 @@ const videoRecording = () => {
         navigator.mediaDevices.enumerateDevices()
         .then(devices => {
             devices.forEach(device=>{
-                console.log(device.kind.toUpperCase(), device.label);
+                // console.log(device.kind.toUpperCase(), device.label);
                 //, device.deviceId
             })
         })
         .catch(err=>{
-            console.log(err.name, err.message);
+            // console.log(err.name, err.message);
         })
     }
 
@@ -56,17 +56,17 @@ const videoRecording = () => {
         //add listeners for saving video/audio
         let start = document.getElementById('btn-start');
         let stop = document.getElementById('btn-stop');
-        let vidSave = document.getElementById('vid2');
+        // let vidSave = document.getElementById('vid2');
         let mediaRecorder = new MediaRecorder(mediaStreamObj);
         let chunks = [];
 
         start.addEventListener('click', (ev)=>{
             mediaRecorder.start();
-            console.log(mediaRecorder.state);
+            // console.log(mediaRecorder.state);
         })
         stop.addEventListener('click', (ev)=>{
             mediaRecorder.stop();
-            console.log(mediaRecorder.state);
+            // console.log(mediaRecorder.state);
         });
         mediaRecorder.ondataavailable = function(ev) {
             chunks.push(ev.data);
@@ -75,11 +75,11 @@ const videoRecording = () => {
             let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
             chunks = [];
             let videoURL = window.URL.createObjectURL(blob);
-            vidSave.src = videoURL;
+            // vidSave.src = videoURL;
         }
     })
     .catch(function(err) {
-        console.log(err.name, err.message);
+        // console.log(err.name, err.message);
     });
   };
 
