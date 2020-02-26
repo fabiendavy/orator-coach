@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   get "/library", to: "pages#library"
 
   resources :recordings, only: [ :new, :create, :show ]
-  resources :observers, only: [ :new, :create ] do
-    resources :reviews, only: [ :new, :create ] do
+  resources :observers, only: [ :new, :create, :update ] do
       member do
-        get '/final_review', to: "reviews#final_review"
+        get '/final_review', to: "observers#final_review"
       end
+    resources :reviews, only: [ :new, :create ] do
     end
   end
 end

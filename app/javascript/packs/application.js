@@ -23,8 +23,8 @@ require("channels")
 // ----------------------------------------------------
 import "bootstrap";
 
-import { displayFinalValidation } from "../reviews/review"
-displayFinalValidation();
+// import { displayFinalValidation } from "../reviews/review"
+// displayFinalValidation();
 
 import { videoRecording } from "../plugins/mediaStream";
 videoRecording();
