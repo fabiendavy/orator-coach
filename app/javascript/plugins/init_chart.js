@@ -14,11 +14,11 @@ console.log(reviewType3);
 console.log(reviewType4);
 console.log(reviewType5);
 
-var ctx = document.getElementById('myChart').getContext('2d');
+const ctx = document.getElementById('myChart').getContext('2d');
 
 Chart.defaults.global.defaultFontColor = '#8bbaba';
 
-var myChart = new Chart(ctx, {
+const myChart = new Chart(ctx, {
     type: 'polarArea',
     data: {
         labels: ['Speak too fast', 'Review_2', 'Review_3', 'Review_4', 'Review_5'],
