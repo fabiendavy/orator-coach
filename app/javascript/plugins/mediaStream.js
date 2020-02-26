@@ -1,7 +1,7 @@
 const videoRecording = () => {
 
     let constraintObj = {
-        audio: false,
+        audio: true,
         video: {
             facingMode: "user",
             width: { min: 640, ideal: 1280, max: 1920 },
