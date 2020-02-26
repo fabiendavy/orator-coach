@@ -6,16 +6,24 @@ class ObserversController < ApplicationController
   end
 
   def create
+    # Create a new (empty) observer instance
     @observer = Observer.new
-    @observer.user = current_user
+
+    # Get access_key entered by observer and search for corresponding recording
     @input_key = params[:observer][:client_key]
     @recording = Recording.find_by(access_key: @input_key)
-    raise
-    # if @input_key == @access_key
-    #   @observer = Observer.create(user_id: @user.id, recording_id: )
-    # else
-    #   redirect_to new_observer_path
-    # end
-  end
 
+    # Set keys of the observer instance
+    @observer.user = current_user
+    @observer.recording = @recording
+
+    # If the key entered by the observer matches a recording key, then create a new observer, else render new
+    if @recording
+      @observer.save
+      redirect_to new_observer_review_path(@observer)
+    else
+      redirect_to new_observer_path
+    end
+
+  end
 end
