@@ -20,6 +20,7 @@ class ObserversController < ApplicationController
     # If the key entered by the observer matches a recording key, then create a new observer, else render new
     if @recording
       @observer.save
+      redirect_to new_observer_review_path(@observer)
     else
       redirect_to new_observer_path
     end
