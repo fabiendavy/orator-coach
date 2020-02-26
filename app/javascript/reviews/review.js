@@ -1,5 +1,5 @@
 const finalReviewButton = document.querySelector("#final-review-button");
-const listOfReviewType = document.querySelector("#list-of-review-types");
+
 const finalReviewForm = document.querySelector("#final-review-form");
 
 const displayFinalValidation = () => {
