@@ -5,4 +5,5 @@ class Recording < ApplicationRecord
 
   STATUS = ["joining", "pending", "recording", "done"]
   validates :status, inclusion: { in: STATUS }
+  validates :access_key, uniqueness: true
 end
