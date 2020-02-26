@@ -27,7 +27,7 @@ import "bootstrap";
 
 import { myChart } from "../plugins/init_chart";
 
-import { videoRecording } from "../plugins/mediaStream";
+// import { videoRecording } from "../plugins/mediaStream";
 import "./showRecording"
 
 import { displayFinalValidation } from "../reviews/review"
