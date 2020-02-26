@@ -1,4 +1,8 @@
 class Review < ApplicationRecord
   belongs_to :observer
-  belongs_to :recording, through: :observer
+
+  def recording
+    observer.recording
+  end
+
 end
