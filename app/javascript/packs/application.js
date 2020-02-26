@@ -24,16 +24,14 @@ require("chart.js")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import "bootstrap";
-
-
-// import { displayFinalValidation } from "../reviews/review"
-// displayFinalValidation();
-
+import { recordVideo } from "./showRecording";
 import { myChart } from "../plugins/init_chart";
-
+import { displayFinalValidation } from "../reviews/review"
 import { videoRecording } from "../plugins/mediaStream";
-import "./showRecording"
 
-import { videoRecording } from "../plugins/mediaStream";
-videoRecording();
-
+document.addEventListener('turbolinks:load', () => {
+  recordVideo();
+  myChart();
+  displayFinalValidation();
+  videoRecording();
+});
