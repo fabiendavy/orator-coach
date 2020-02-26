@@ -15,16 +15,11 @@
           <%= f.submit "Modulate your tone", class: "recording-btn my-2" %>
 
           <div class="recording-choice d-flex justify-content-center">
-            <%= link_to "TERMINATE ", new_observer_review_path(@observer), class: "validation-btn text-center", id: "final-review-button" %>
+            <%= link_to "TERMINATE ", final_review_observer_path(@observer), class: "validation-btn text-center", id: "final-review-button" %>
           </div>
 
         <% end %>
       </div>
-
-      <div class="recording-choice" id="final-review-form">
-        <h1>Balance ton formulaire</h1>
-      </div>
-
 
     </div>
 

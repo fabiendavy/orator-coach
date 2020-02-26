@@ -1,8 +1,9 @@
 class ObserversController < ApplicationController
 
+before_action :set_observer, only:[ :update, :final_review ]
+
   def new
     @observer = Observer.new
-    @access_key = params[:access_key]
   end
 
   def create
@@ -23,6 +24,24 @@ class ObserversController < ApplicationController
     else
       redirect_to new_observer_path
     end
-
   end
+
+
+  def update
+    # @observer = Observer.find(params[:id])
+    @observer.final_review = params[:observer][:final_review]
+    @observer.save
+    redirect_to '/dashboard'
+  end
+
+  def final_review
+    # @observer = Observer.find(params[:id])
+  end
+
+  private
+
+  def set_observer
+    @observer = Observer.find(params[:id])
+  end
+
 end
