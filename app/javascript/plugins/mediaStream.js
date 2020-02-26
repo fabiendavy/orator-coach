@@ -40,7 +40,7 @@ const videoRecording = () => {
     navigator.mediaDevices.getUserMedia(constraintObj)
     .then(function(mediaStreamObj) {
         //connect the media stream to the first video element
-        let video = document.querySelector('video');
+        let video = document.getElementById('record-video');
         if ("srcObject" in video) {
             video.srcObject = mediaStreamObj;
         } else {
@@ -56,7 +56,7 @@ const videoRecording = () => {
         //add listeners for saving video/audio
         let start = document.getElementById('btn-start');
         let stop = document.getElementById('btn-stop');
-        // let vidSave = document.getElementById('vid2');
+        let vidSave = document.getElementById('final-video');
         let mediaRecorder = new MediaRecorder(mediaStreamObj);
         let chunks = [];
 
@@ -75,7 +75,7 @@ const videoRecording = () => {
             let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
             chunks = [];
             let videoURL = window.URL.createObjectURL(blob);
-            // vidSave.src = videoURL;
+            vidSave.src = videoURL; 
         }
     })
     .catch(function(err) {

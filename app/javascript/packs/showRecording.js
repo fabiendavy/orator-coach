@@ -3,7 +3,7 @@ const accessKey = document.getElementById('access_key');
 const validateBtn = document.getElementById('btn-to-pending');
 const startBtn = document.getElementById('btn-start');
 const stopBtn = document.getElementById('btn-stop');
-const video = document.getElementById('video');
+const video = document.getElementById('record-video');
 const backDashboard = document.getElementById('dashboard-back');
 
 if (validateBtn) {
