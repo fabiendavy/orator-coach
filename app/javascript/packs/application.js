@@ -22,6 +22,10 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import "bootstrap";
-import { displayFinalValidation } from "../reviews/review"
 
+import { displayFinalValidation } from "../reviews/review"
 displayFinalValidation();
+
+import { videoRecording } from "../plugins/mediaStream";
+videoRecording();
+
