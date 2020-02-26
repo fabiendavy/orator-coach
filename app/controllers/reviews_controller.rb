@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review.observer = @observer
     @review.review_type = params[:commit]
     @review.save
-    redirect_to new_observer_review_path(@observer)
+    # redirect_to new_observer_review_path(@observer)
   end
 
 end
