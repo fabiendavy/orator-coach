@@ -83,6 +83,6 @@ const videoRecording = () => {
       });
     });
   }
-  };
+};
 
 export { videoRecording };
