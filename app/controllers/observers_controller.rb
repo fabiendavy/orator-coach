@@ -9,9 +9,7 @@ class ObserversController < ApplicationController
     @observer = Observer.new
     @observer.user = current_user
     @input_key = params[:observer][:client_key]
-    @access_key = params[:access_key]
-    @recording = Recording.find_by(access_key: @access_key)
-
+    @recording = Recording.find_by(access_key: @input_key)
     raise
     # if @input_key == @access_key
     #   @observer = Observer.create(user_id: @user.id, recording_id: )
