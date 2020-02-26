@@ -25,13 +25,14 @@ require("chart.js")
 // ----------------------------------------------------
 import "bootstrap";
 
+
+// import { displayFinalValidation } from "../reviews/review"
+// displayFinalValidation();
+
 import { myChart } from "../plugins/init_chart";
 
 import { videoRecording } from "../plugins/mediaStream";
 import "./showRecording"
-
-import { displayFinalValidation } from "../reviews/review"
-displayFinalValidation();
 
 import { videoRecording } from "../plugins/mediaStream";
 videoRecording();
