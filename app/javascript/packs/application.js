@@ -24,4 +24,10 @@ require("chart.js")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import "bootstrap";
+
 import { myChart } from "../plugins/init_chart";
+
+import { videoRecording } from "../plugins/mediaStream";
+
+videoRecording();
+
