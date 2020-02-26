@@ -1,0 +1,60 @@
+.container {
+  margin-top: 20px;
+  padding: 20px;
+  color: $dark-green;
+}
+
+.stats-list {
+  height: 300px;
+  width: 300px;
+}
+
+#chart {
+  height: 500px;
+  width: 500px;
+}
+
+.container i {
+  font-size: 90px;
+  margin: 15px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  width: 450px;
+  background: transparent;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  margin: 15px 0px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  color: grey;
+}
+
+.card-product h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
