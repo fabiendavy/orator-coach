@@ -11,7 +11,6 @@ class RecordingsController < ApplicationController
     @recording.access_key = Faker::Name.middle_name.downcase
     if @recording.save
       redirect_to recording_path(@recording)
-      # raise
     else
       render :new
     end
@@ -19,11 +18,5 @@ class RecordingsController < ApplicationController
 
   def show
     @recording = Recording.find(params[:id])
-  end
-
-  private
-
-  def recording_params
-    params.require(:recording).permit(:status)
   end
 end

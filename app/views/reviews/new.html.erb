@@ -1,0 +1,34 @@
+<div class="container new-recording">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 col-md-8 col-lg-4 d-flex flex-column align-items-center">
+    <h3 class="text-center">LIVE FEEDBACK TO THE SPEAKER</h3>
+
+      <div class="recording-choice" id="list-of-review-types">
+        <%= simple_form_for [@observer, @review] do |f| %>
+          <%= hidden_field_tag(:access_key, @access_key) %>
+          <%= f.submit "Speak slower", class: "recording-btn my-2" %>
+          <%= f.submit "Speak louder", class: "recording-btn my-2" %>
+          <%= f.submit "Look at the audience", class: "recording-btn my-2" %>
+          <%= f.submit "Engage your audience", class: "recording-btn my-2" %>
+          <%= f.submit "Stay still", class: "recording-btn my-2" %>
+          <%= f.submit "Use your hands", class: "recording-btn my-2" %>
+          <%= f.submit "Modulate your tone", class: "recording-btn my-2" %>
+
+          <div class="recording-choice d-flex justify-content-center">
+            <%= link_to "TERMINATE ", new_observer_review_path(@observer), class: "validation-btn text-center", id: "final-review-button" %>
+          </div>
+
+        <% end %>
+      </div>
+
+      <div class="recording-choice" id="final-review-form">
+        <h1>Balance ton formulaire</h1>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+
