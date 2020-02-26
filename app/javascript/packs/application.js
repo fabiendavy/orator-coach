@@ -27,9 +27,16 @@ import "bootstrap";
 import { executeChart } from "../plugins/init_chart";
 import { videoRecording } from "../plugins/mediaStream";
 import { recordVideo } from "./showRecording";
+import { initSweetalert } from '../plugins/init_sweet_alert';
 
 document.addEventListener('turbolinks:load', () => {
   executeChart();
   videoRecording();
   recordVideo();
+  initSweetalert('#sweet-alert-btn-success', {
+    title: 'Sorry!',
+    text: 'Wrong access key',
+    icon: 'error',
+    confirmButtonText: 'Continue'
+  });
 });

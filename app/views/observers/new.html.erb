@@ -6,9 +6,12 @@
       <div class="recording-choice">
 
         <%= simple_form_for @observer do |f| %>
-          <%= hidden_field_tag(:access_key, @access_key) %>
           <%= f.input :client_key, input_html: {value: ''} %>
-          <%= f.submit "Join speech", class: "recording-btn", id: "submitButton" %>
+
+          <button id="sweet-alert-btn-success" class="recording-btn">
+            <%= f.submit "Join speech", class: "recording-btn", id: "submitButton" %>
+          </button>
+
         <% end %>
       </div>
 
