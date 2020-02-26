@@ -1,20 +1,18 @@
 <div class="container show-recording">
   <div class="row justify-content-center">
     <div class="col-sm-8 col-md-8 col-lg-4 d-flex flex-column align-items-center">
-      <h3 class="text-center">ACCESS KEY</h3>
+      <h3 id="title" class="text-center">ACCESS KEY</h3>
 
-      <div class="recording-key">
+      <div id="access_key" class="recording-key">
         <%= @recording.access_key %>
       </div>
-
-      <%= link_to "✓", recording_path(@recording), class: "recording-validation text-center", id: "btn-to-pending" %>
-
-      <p><button id="btn-start">START</button></br>
-      <button id="btn-stop">STOP</button></p>
-
-      <video controls></video>
-      <video id="vid2" controls></video>
-
+      
+      <button id="btn-to-pending" class="recording-validation text-center">✓</button>
+      <button id="btn-start"><i class="far fa-play-circle fa-3x"></i></button>
+      <button id="btn-stop"><i class="far fa-stop-circle fa-3x"></i></button>
+      <video controls id="record-video"></video>
+			<a href="/dashboard" id="dashboard-back" class="justify-content-center align-items-center recording-btn">Go to dashboard</a>
+			<video controls id="final-video"></video>
     </div>
   </div>
 </div>

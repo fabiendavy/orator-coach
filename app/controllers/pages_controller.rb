@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def stats
-
+    @users = User.all
   end
 
   def library
