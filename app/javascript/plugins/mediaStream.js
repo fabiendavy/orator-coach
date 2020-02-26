@@ -1,27 +1,4 @@
-<body>
-
-<div class="container show-recording">
-  <div class="row justify-content-center">
-    <div class="col-sm-8 col-md-8 col-lg-4 d-flex flex-column align-items-center">
-      <h3 class="text-center">ACCESS KEY</h3>
-
-      <div class="recording-key">
-        <%= @recording.access_key %>
-      </div>
-
-      # <%= link_to "✓", recording_path(@recording), class: "recording-validation text-center", id: "btn-to-pending" %>
-
-      <p><button id="btn-start">START</button></br>
-      <button id="btn-stop">STOP</button></p>
-
-      <video controls></video>
-      <video id="vid2" controls></video>
-
-    </div>
-  </div>
-</div>
-
-<!-- <script>
+const videoRecording = () => {
 
     let constraintObj = {
         audio: false,
@@ -78,7 +55,7 @@
 
         //add listeners for saving video/audio
         let start = document.getElementById('btn-start');
-        let stop = document.getElementById('btntop');
+        let stop = document.getElementById('btn-stop');
         let vidSave = document.getElementById('vid2');
         let mediaRecorder = new MediaRecorder(mediaStreamObj);
         let chunks = [];
@@ -104,17 +81,6 @@
     .catch(function(err) {
         console.log(err.name, err.message);
     });
+  };
 
-    /*********************************
-    getUserMedia returns a Promise
-    resolve - returns a MediaStream Object
-    reject returns one of the following errors
-    AbortError - generic unknown cause
-    NotAllowedError (SecurityError) - user rejected permissions
-    NotFoundError - missing media track
-    NotReadableError - user permissions given but hardware/OS error
-    OverconstrainedError - constraint video settings preventing
-    TypeError - audio: false, video: false
-    *********************************/
-</script> -->
-</body>
+  export { videoRecording };
