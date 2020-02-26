@@ -11,7 +11,7 @@ class RecordingsController < ApplicationController
     @recording.access_key = Faker::Name.middle_name.downcase
     if @recording.save
       redirect_to recording_path(@recording)
-      raise
+      # raise
     else
       render :new
     end
