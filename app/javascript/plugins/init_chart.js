@@ -1,6 +1,7 @@
 import Chart from 'chart.js';
 
 const mapDiv = document.getElementById('chart');
+
 const reviewType1 = mapDiv.attributes.datatype1.value;
 const reviewType2 = mapDiv.attributes.datatype2.value;
 const reviewType3 = mapDiv.attributes.datatype3.value;
@@ -15,10 +16,12 @@ console.log(reviewType5);
 
 var ctx = document.getElementById('myChart').getContext('2d');
 
+Chart.defaults.global.defaultFontColor = '#8bbaba';
+
 var myChart = new Chart(ctx, {
     type: 'polarArea',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Speak too fast', 'Review_2', 'Review_3', 'Review_4', 'Review_5'],
         datasets: [{
             label: '# of Reviews',
             data: [reviewType1, reviewType2, reviewType3, reviewType4, reviewType5],
