@@ -25,6 +25,9 @@
   #btn-start, #btn-stop, #video, a {
     display: none;
   }
+  #btn-start, #btn-stop {
+    color: $light-green;
+  }
   #btn-to-pending {
     display: block;
     vertical-align: middle;

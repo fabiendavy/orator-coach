@@ -26,6 +26,7 @@ if (startBtn) {
 
 if (stopBtn) {
   stopBtn.addEventListener('click', (event) => {
+    title.innerText = '';
     stopBtn.style.display = 'none';
     video.style.display = "none";
     backDashboard.style.display = 'flex';
