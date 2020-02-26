@@ -7,7 +7,7 @@ const recordVideo = () => {
   const video = document.getElementById('record-video');
   const finalVideo = document.getElementById('final-video');
   const backDashboard = document.getElementById('dashboard-back');
-  
+
   if (validateBtn) {
     validateBtn.addEventListener('click', (event) => {
       title.innerText = 'LAUNCH RECORDING';
