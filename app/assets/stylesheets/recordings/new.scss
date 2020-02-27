@@ -24,6 +24,9 @@
   border-radius: 8px;
   width: 100%;
   height: 50px;
+  &:hover {
+    box-shadow: 0 0 10px $light-green;
+  }
 }
 
 .validation-btn {
