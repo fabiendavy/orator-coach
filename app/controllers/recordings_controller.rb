@@ -22,7 +22,12 @@ class RecordingsController < ApplicationController
 
   def update
     @recording = Recording.find(params[:id])
-    @recording.video.attach()
+    blob_url = params[:recording][:video]
+    blob = ActiveStorage::Blob.create_before_direct_upload!(
+      filename: blob_url,
+      content_type: "video/webm"
+    )
+    @recording.video.attach(blob)
     redirect_to dashboard_path
   end
 
