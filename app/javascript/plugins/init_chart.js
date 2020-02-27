@@ -4,16 +4,9 @@ const executeChart = () => {
   const chartDiv = document.getElementById('chart');
 
   if (chartDiv) {
-    const reviewType1 = chartDiv.attributes.datatype1.value;
-    const reviewType2 = chartDiv.attributes.datatype2.value;
-    const reviewType3 = chartDiv.attributes.datatype3.value;
-    const reviewType4 = chartDiv.attributes.datatype4.value;
-    const reviewType5 = chartDiv.attributes.datatype5.value;
-
     const ctx = document.getElementById('myChart').getContext('2d');
 
     const reviewsType = JSON.parse(chartDiv.dataset.reviews);
-
     const reviewsValues = Object.values(reviewsType)
 
     Chart.defaults.global.defaultFontColor = '#8bbaba';
