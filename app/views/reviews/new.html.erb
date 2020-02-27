@@ -4,8 +4,7 @@
     <h3 class="text-center">LIVE FEEDBACK TO THE SPEAKER</h3>
 
       <div class="recording-choice" id="list-of-review-types">
-        <%= simple_form_for [@observer, @review] do |f| %>
-          <%= hidden_field_tag(:access_key, @access_key) %>
+        <%= simple_form_for([@observer, @review], remote: true) do |f| %>
           <%= f.submit "Speak slower", class: "recording-btn my-2" %>
           <%= f.submit "Speak louder", class: "recording-btn my-2" %>
           <%= f.submit "Look at the audience", class: "recording-btn my-2" %>
@@ -15,7 +14,7 @@
           <%= f.submit "Modulate your tone", class: "recording-btn my-2" %>
 
           <div class="recording-choice d-flex justify-content-center">
-            <%= link_to "TERMINATE ", final_review_observer_path(@observer), class: "validation-btn text-center", id: "final-review-button" %>
+            <%= link_to "TERMINATE ", final_review_observer_path(@observer), class: "d-flex validation-btn justify-content-center align-items-center", id: "final-review-button" %>
           </div>
 
         <% end %>
