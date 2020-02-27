@@ -34,6 +34,15 @@
   }
   #btn-to-pending {
     padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-green;
+    color: $dark-gray;
+    border-radius: 8px;
+    &:hover {
+      box-shadow: 0 0 10px $light-green;
+    }
   }
   #btn-to-pending i {
     font-size: 20px;
