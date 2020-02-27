@@ -4,6 +4,7 @@ before_action :set_observer, only:[ :update, :final_review ]
 
   def new
     @observer = Observer.new
+    @sweet = params[:sweet]
   end
 
   def create
@@ -20,9 +21,9 @@ before_action :set_observer, only:[ :update, :final_review ]
       @observer.user = current_user
       @observer.recording = @recording
       @observer.save
-      redirect_to new_observer_review_path(@observer)
+      redirect_to new_observer_review_path(@observer, sweet: "success")
     else
-      redirect_to new_observer_path
+      redirect_to new_observer_path(sweet: "error")
     end
   end
 

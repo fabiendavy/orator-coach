@@ -9,31 +9,6 @@ const videoRecording = () => {
     }
   };
 
-  //handle older browsers that might implement getUserMedia in some way
-  if (navigator.mediaDevices === undefined) {
-    navigator.mediaDevices = {};
-    navigator.mediaDevices.getUserMedia = function(constraintObj) {
-      let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-      if (!getUserMedia) {
-        return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
-      }
-      return new Promise(function(resolve, reject) {
-        getUserMedia.call(navigator, constraintObj, resolve, reject);
-      });
-    }
-  } else {
-    navigator.mediaDevices.enumerateDevices()
-    .then(devices => {
-      devices.forEach(device=>{
-        // console.log(device.kind.toUpperCase(), device.label);
-        //, device.deviceId
-      })
-    })
-    .catch(err=>{
-      // console.log(err.name, err.message);
-    })
-  }
-
   const askPermission = document.getElementById('btn-to-pending');
   if (askPermission) {
     askPermission.addEventListener('click', (event) => {
