@@ -22,7 +22,7 @@ class RecordingsController < ApplicationController
 
   def update
     @recording = Recording.find(params[:id])
-    @recording.update(recording_params)
+    @recording.video.attach()
     redirect_to dashboard_path
   end
 
