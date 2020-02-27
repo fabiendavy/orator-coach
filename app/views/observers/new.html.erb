@@ -1,18 +1,16 @@
 <div class="container new-recording">
   <div class="row justify-content-center">
     <div class="col-sm-8 col-md-8 col-lg-4 d-flex flex-column align-items-center">
-      <h3 class="text-center">ENTER SPEECH PASSWORD</h3>
-      <%= @access_key %>
+
+      <h3 class="text-center">ENTER SPEECH ACCESS KEY</h3>
       <div class="recording-choice" id="enter-speech-password" data-sweet=<%= @sweet %>>
 
-        <%= simple_form_for @observer do |f| %>
-          <%= f.input :client_key, input_html: {value: ''} %>
+      <%= simple_form_for @observer do |f| %>
+        <%= f.input :client_key, label: false, placeholder: "Enter access key", input_html: {value: ''} %>
+        <%= f.submit "Join speech", class: "recording-btn", id: "submitButton" %>
+      <% end %>
 
-          <%= f.submit "Join speech", class: "recording-btn", id: "submitButton" %>
-
-        <% end %>
       </div>
-
     </div>
   </div>
 </div>
