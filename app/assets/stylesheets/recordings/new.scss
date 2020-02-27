@@ -27,13 +27,14 @@
 }
 
 .validation-btn {
-  background-color: #F01E14;
-  color: white;
+  background-color: $dark-green;
+  color: $dark-gray;
   border: none;
   border-radius: 8px;
   width: 100%;
-  height: 50px;
+  height: 100px;
   font-weight: bold;
+  font-size: 30px;
 }
 
 .no-backrgound {
