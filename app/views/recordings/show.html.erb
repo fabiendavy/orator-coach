@@ -13,7 +13,9 @@
       <video controls id="record-video"></video>
 
       <%= form_for(@recording) do |f| %>
-        <%= f.text_field :video %>
+        <span id='recording-id' data-id='<%= @recording.id %>'></span>
+        <%#= f.text_field :video %>
+        <input type="file" id="recording_video" name="recording[video]">
         <%= f.submit "Go to dashboard", id: "dashboard-back", class: "justify-content-center align-items-center recording-btn" %>
       <% end %>
       

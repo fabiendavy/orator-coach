@@ -21,13 +21,19 @@ class RecordingsController < ApplicationController
   end
 
   def update
+    binding.pry
     @recording = Recording.find(params[:id])
-    blob_url = params[:recording][:video]
-    blob = ActiveStorage::Blob.create_before_direct_upload!(
-      filename: blob_url,
-      content_type: "video/webm"
-    )
-    @recording.video.attach(blob)
+    # @blob_url = params[:recording][:video]
+    # blob = ActiveStorage::Blob.create_before_direct_upload!(
+    #   filename: blob_url,
+    #   content_type: "video/webm"
+    # )
+    # @recording.video.attach(blob)
+    # @recording.video.attach(params[:videodata])
+    @recording.video.attach(io: params[:videodata].tempfile.open, filename: "recording#{@recording.id}", content_type: 'video/webm')
+    # todo 
+    # params[:videodata]
+    # attach
     redirect_to dashboard_path
   end
 

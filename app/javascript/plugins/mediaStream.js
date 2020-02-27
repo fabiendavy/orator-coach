@@ -53,10 +53,21 @@ const videoRecording = () => {
             'type' : 'video/webm' 
           });
           chunks = [];
-          let videoURL = window.URL.createObjectURL(blob);
-          const inputVideoToSend = document.getElementById('recording_video');
-          inputVideoToSend.value = videoURL;
+          // let videoURL = window.URL.createObjectURL(blob);
+          // const inputVideoToSend = document.getElementById('recording_video');
+          const csrf = document.querySelector('[name="authenticity_token"]').value
+          const id = document.querySelector('#recording-id').dataset.id
+          // inputVideoToSend.value = blob;
           // vidSave.src = videoURL;
+          var formData = new FormData();
+          formData.append('videodata', blob)
+          var xhr = new XMLHttpRequest();
+          xhr.open('PATCH', `/recordings/${id}`, true);
+          xhr.responseType = 'Blob';
+          xhr.setRequestHeader("x-csrf-token", csrf); 
+          xhr.onload = function(e) { /*irrelevant code*/ };
+          // debugger
+          xhr.send(formData);
         }
       })
       .catch(function(err) {
