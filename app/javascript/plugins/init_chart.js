@@ -55,12 +55,20 @@ const executeChart = () => {
         }]
       },
       options: {
+        legend: {position: 'right'},
+        scale: {
+          display: false,
+        },
         scales: {
           yAxes: [{
+            gridLines: {
+              drawBorder: false,
+              display: false,
+            },
             ticks: {
-              beginAtZero: true
-            }
-          }]
+                display: false
+            },
+          }],
         }
       }
     });
