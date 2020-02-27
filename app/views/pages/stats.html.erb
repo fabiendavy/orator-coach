@@ -3,10 +3,9 @@
     <div class="col">
       <div class="stats-list">
         <div class="card-product">
-          <!-- <img src="https://image.flaticon.com/icons/svg/1380/1380338.svg" /> -->
           <i class="far fa-comments"></i>
           <div class="card-product-infos">
-            <h2>15</h2>
+            <h2><%= @comments_received_number %></h2>
             <p>Comments received</p>
           </div>
         </div>
@@ -14,7 +13,7 @@
         <div class="card-product">
           <i class="far fa-thumbs-up"></i>
           <div class="card-product-infos">
-            <h2>12</h2>
+            <h2><%= @comments_given_number %></h2>
             <p>Comments given</p>
           </div>
         </div>
@@ -22,7 +21,7 @@
         <div class="card-product">
           <i class="fas fa-video"></i>
           <div class="card-product-infos">
-            <h2>3</h2>
+            <h2><%= @recordings_number_speaker %></h2>
             <p>Sessions as speaker</p>
           </div>
         </div>
@@ -30,7 +29,7 @@
         <div class="card-product">
           <i class="fas fa-users"></i>
           <div class="card-product-infos">
-            <h2>2</h2>
+            <h2><%= @recordings_number_observer %></h2>
             <p>Sessions as observer</p>
           </div>
         </div>
@@ -38,6 +37,7 @@
     </div>
     <div class="col">
       <div id="chart"
+           data-reviews="<%= @reviews_type_count.to_json %>"
            datatype1="10"
            datatype2="20"
            datatype3="30"
