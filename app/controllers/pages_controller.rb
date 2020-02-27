@@ -52,17 +52,27 @@ class PagesController < ApplicationController
   end
 
   def count_reviews_type
-    reviews_count = {}
+    reviews_count = { 'speak-slower' => 0,
+                      'speak-louder' => 0,
+                      'look-at-us' => 0,
+                      'stay-still' => 0,
+                      'smile' => 0,
+                      'great-pace' => 0,
+                      'great-tone' => 0,
+                      'good-eye-contact' => 0,
+                      'good-gesture' => 0,
+                      'nice-smile' => 0
+                    }
     reviews_type = get_reviews_type
 
     reviews_type.each do |review_type|
-      if reviews_count.has_key?(review_type)
+      if reviews_count[review_type] > 0
         reviews_count[review_type] += 1
       else
         reviews_count[review_type] = 1
       end
     end
 
-    return reviews_count
+    reviews_count
   end
 end
