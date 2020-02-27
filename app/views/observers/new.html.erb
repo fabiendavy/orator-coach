@@ -6,7 +6,6 @@
       <div class="recording-choice" id="enter-speech-password" data-sweet=<%= @sweet %>>
 
         <%= simple_form_for @observer do |f| %>
-          <%= hidden_field_tag(:access_key, @access_key) %>
           <%= f.input :client_key, label: false, placeholder: "Enter access key", input_html: {value: ''} %>
           <%= f.submit "Join speech", class: "review-btn", id: "submitButton" %>
         <% end %>
