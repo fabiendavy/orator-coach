@@ -1,26 +1,39 @@
-<div class="container new-recording">
-  <div class="row justify-content-center">
-    <div class="col-sm-8 col-md-8 col-lg-4 d-flex flex-column align-items-center">
-    <h3 class="text-center">LIVE FEEDBACK TO THE SPEAKER</h3>
+<style>.navbar{display: none}</style>
 
-      <div class="recording-choice" id="list-of-review-types" data-sweet=<%= @sweet %>>
+
+<div class="grid-container new-review">
+  <div class="new-review">
+
+    <h3 class="text-center">LIVE FEEDBACK</h3>
+
+      <div class="review-choice">
         <%= simple_form_for([@observer, @review], remote: true) do |f| %>
-          <%= f.submit "Speak slower", class: "recording-btn my-2" %>
-          <%= f.submit "Speak louder", class: "recording-btn my-2" %>
-          <%= f.submit "Look at the audience", class: "recording-btn my-2" %>
-          <%= f.submit "Engage your audience", class: "recording-btn my-2" %>
-          <%= f.submit "Stay still", class: "recording-btn my-2" %>
-          <%= f.submit "Use your hands", class: "recording-btn my-2" %>
-          <%= f.submit "Modulate your tone", class: "recording-btn my-2" %>
 
-          <div class="recording-choice d-flex justify-content-center">
+          <div class="reviews-grid">
+            <div>
+              <div class="relative">
+              <%= f.submit "Speak slower", class: "review-btn my-2" %>
+              <span class="badge-count">4</span>
+              </div>
+            </div>
+              <%= f.submit "Great pace", class: "review-btn my-2" %>
+              <%= f.submit "Speak louder", class: "review-btn my-2" %>
+              <%= f.submit "Great tone", class: "review-btn my-2" %>
+              <%= f.submit "Look at us", class: "review-btn my-2" %>
+              <%= f.submit "Good eye contact", class: "review-btn my-2" %>
+              <%= f.submit "Stay still", class: "review-btn my-2" %>
+              <%= f.submit "Good gesture", class: "review-btn my-2" %>
+              <%= f.submit "Smile", class: "review-btn my-2" %>
+              <%= f.submit "Nice smile", class: "review-btn my-2" %>
+          </div>
+
+          <div class="review-choice d-flex justify-content-center">
             <%= link_to "TERMINATE ", final_review_observer_path(@observer), class: "d-flex validation-btn justify-content-center align-items-center", id: "final-review-button" %>
           </div>
 
         <% end %>
       </div>
 
-    </div>
 
   </div>
 </div>
