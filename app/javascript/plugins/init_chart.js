@@ -17,7 +17,11 @@ const executeChart = () => {
     const myChart = new Chart(ctx, {
       type: 'polarArea',
       data: {
-        labels: ['Speak too fast', 'Review_2', 'Review_3', 'Review_4', 'Review_5'],
+        labels: ['Slower',
+                 'Louder',
+                 'Review_3',
+                 'Review_4',
+                 'Review_5'],
         datasets: [{
           label: '# of Reviews',
           data: [reviewType1, reviewType2, reviewType3, reviewType4, reviewType5],
