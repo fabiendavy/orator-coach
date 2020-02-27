@@ -19,4 +19,16 @@ class RecordingsController < ApplicationController
   def show
     @recording = Recording.find(params[:id])
   end
+
+  def update
+    @recording = Recording.find(params[:id])
+    @recording.update(recording_params)
+    redirect_to dashboard_path
+  end
+
+  private
+
+  def recording_params
+    params.require(:recording).permit(:video)
+  end
 end

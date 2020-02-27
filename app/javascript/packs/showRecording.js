@@ -5,7 +5,7 @@ const recordVideo = () => {
   const startBtn = document.getElementById('btn-start');
   const stopBtn = document.getElementById('btn-stop');
   const video = document.getElementById('record-video');
-  const finalVideo = document.getElementById('final-video');
+  // const finalVideo = document.getElementById('final-video');
   const backDashboard = document.getElementById('dashboard-back');
 
   if (validateBtn) {
@@ -31,7 +31,7 @@ const recordVideo = () => {
       title.innerText = '';
       stopBtn.style.display = 'none';
       video.style.display = "none";
-      finalVideo.style.display = "block";
+      // finalVideo.style.display = "block";
       backDashboard.style.display = 'flex';
     });
   }

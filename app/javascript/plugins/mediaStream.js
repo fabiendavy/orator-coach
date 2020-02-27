@@ -31,8 +31,10 @@ const videoRecording = () => {
         //add listeners for saving video/audio
         let start = document.getElementById('btn-start');
         let stop = document.getElementById('btn-stop');
-        let vidSave = document.getElementById('final-video');
-        let mediaRecorder = new MediaRecorder(mediaStreamObj);
+        // let vidSave = document.getElementById('final-video');
+        let mediaRecorder = new MediaRecorder(mediaStreamObj, {
+          mimeType: 'video/webm'
+        });
         let chunks = [];
 
         start.addEventListener('click', (ev)=>{
@@ -47,10 +49,14 @@ const videoRecording = () => {
           chunks.push(ev.data);
         }
         mediaRecorder.onstop = (ev)=>{
-          let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
+          let blob = new Blob(chunks, {
+            'type' : 'video/webm' 
+          });
           chunks = [];
           let videoURL = window.URL.createObjectURL(blob);
-          vidSave.src = videoURL; 
+          const inputVideoToSend = document.getElementById('recording_video');
+          inputVideoToSend.value = videoURL;
+          // vidSave.src = videoURL;
         }
       })
       .catch(function(err) {

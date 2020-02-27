@@ -11,8 +11,11 @@
       <button id="btn-start"><i class="far fa-play-circle fa-3x"></i></button>
       <button id="btn-stop"><i class="far fa-stop-circle fa-3x"></i></button>
       <video controls id="record-video"></video>
-			<a href="/dashboard" id="dashboard-back" class="justify-content-center align-items-center recording-btn">Go to dashboard</a>
-			<video controls id="final-video"></video>
+
+      <%= simple_form_for @recording do |f| %>
+        <%= f.input :video, as: :file %>
+        <%= f.submit "Go to dashboard", id: "dashboard-back", class: "justify-content-center align-items-center recording-btn" %>
+      <% end %>
       
     </div>
   </div>
