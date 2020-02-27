@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @observer = Observer.find(params[:observer_id])
+    @sweet = params[:sweet]
   end
 
   def create

@@ -3,16 +3,14 @@
     <div class="col-sm-8 col-md-8 col-lg-4 d-flex flex-column align-items-center">
       <h3 class="text-center">ENTER SPEECH PASSWORD</h3>
       <%= @access_key %>
-      <div class="recording-choice">
+      <div class="recording-choice" id="enter-speech-password" data-sweet=<%= @sweet %>>
 
         <%= simple_form_for @observer do |f| %>
           <%= f.input :client_key, input_html: {value: ''} %>
 
+          <%= f.submit "Join speech", class: "recording-btn", id: "submitButton" %>
 
         <% end %>
-          <button id="sweet-alert-btn-success" class="recording-btn">CLICK
-            <%#= f.submit "Join speech", class: "recording-btn", id: "submitButton" %>
-          </button>
       </div>
 
     </div>

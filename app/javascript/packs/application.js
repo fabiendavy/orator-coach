@@ -33,10 +33,5 @@ document.addEventListener('turbolinks:load', () => {
   executeChart();
   videoRecording();
   recordVideo();
-  initSweetalert('#sweet-alert-btn-success', {
-    title: 'Sorry!',
-    text: 'Wrong access key',
-    icon: 'error',
-    confirmButtonText: 'Continue'
-  });
+  initSweetalert();
 });
