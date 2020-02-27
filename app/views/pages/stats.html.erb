@@ -3,7 +3,6 @@
     <div class="col">
       <div class="stats-list">
         <div class="card-product">
-          <!-- <img src="https://image.flaticon.com/icons/svg/1380/1380338.svg" /> -->
           <i class="far fa-comments"></i>
           <div class="card-product-infos">
             <h2><%= @comments_received_number %></h2>
@@ -38,6 +37,7 @@
     </div>
     <div class="col">
       <div id="chart"
+           data-reviews="<%= @reviews_type_count.to_json %>"
            datatype1="10"
            datatype2="20"
            datatype3="30"
