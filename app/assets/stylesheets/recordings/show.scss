@@ -33,17 +33,18 @@
     color: $light-green;
   }
   #btn-to-pending {
-    display: block;
-    vertical-align: middle;
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgb(77, 158, 77);
-    color: $light-green;
-    border-radius: 50%;
-    font-size: 28px;
-    color: rgb(77, 158, 77);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-green;
+    color: $dark-gray;
+    border-radius: 8px;
+    &:hover {
+      box-shadow: 0 0 10px $light-green;
+    }
   }
-  a:hover {
-    text-decoration: none;
+  #btn-to-pending i {
+    font-size: 20px;
   }
 }
