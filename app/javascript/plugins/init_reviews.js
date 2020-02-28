@@ -1,8 +1,8 @@
 // const reviewButton = document.querySelectorAll(".review-btn");
 const recordButton = document.getElementById("btn-start");
 
-if (recordButton) {
   const initReviews = () => {
+    if (recordButton) {
     recordButton.addEventListener("click", (event) => {
       const recordHit = new Date();
       const startTime = recordHit.getTime();
