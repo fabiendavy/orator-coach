@@ -1,5 +1,6 @@
 <div class="container-fluid">
   <div class="row justify-content">
+
     <div class="col-8">
       <video
           id="my-player"
@@ -19,12 +20,18 @@
           </a>
         </p>
       </video>
+
+      <div>
+
+      </div>
+
     </div>
+
     <div class="col-3">
       <div class="thumbnails-containers">
         <% @recordings.each do |recording| %>
-          <%= link_to recording_path(recording) do %>
-            <div class="test-box card">
+          <%= link_to dashboard_path do %>
+            <div class="test-box card recording-thumbnail" data-recordingid= <%= recording.id %> >
               <h3 class="card-title">Thumbnail</h3>
               <p><%= recording.created_at.strftime("%d-%m-%Y") %></p>
             </div>
@@ -32,5 +39,6 @@
         <% end %>
       </div>
     </div>
+
   </div>
 </div>

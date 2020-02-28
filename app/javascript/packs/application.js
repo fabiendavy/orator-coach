@@ -29,6 +29,7 @@ import { videoRecording } from "../plugins/mediaStream";
 import { recordVideo } from "./showRecording";
 import { initSweetalert } from '../plugins/init_sweet_alert';
 import { initBadge } from '../plugins/init_badges';
+import { initCommentsTab } from '../plugins/init_comments_tab';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   recordVideo();
   initSweetalert();
   initBadge();
+  initCommentsTab();
 });
