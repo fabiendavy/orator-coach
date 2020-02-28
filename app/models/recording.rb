@@ -5,6 +5,6 @@ class Recording < ApplicationRecord
   has_one_attached :video
 
   STATUS = ["joining", "pending", "recording", "done"]
-  validates :status, inclusion: { in: STATUS }
-  validates :access_key, uniqueness: true
+  # validates :status, inclusion: { in: STATUS }
+  # validates :access_key, uniqueness: true
 end

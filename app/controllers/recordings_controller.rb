@@ -29,7 +29,7 @@ class RecordingsController < ApplicationController
     # )
     # @recording.video.attach(blob)
     # @recording.video.attach(params[:videodata])
-
+    # binding.pry
     @recording.video.attach(io: params[:videodata], filename: "recording#{@recording.id}.webm", content_type: 'video/webm')
 
     # @recording.video.attach(io: File.open(params[:videodata].path), filename: "recording#{@recording.id}.webm", content_type: 'video/webm')
@@ -40,9 +40,7 @@ class RecordingsController < ApplicationController
     # params[:videodata]
     # attach
     # redirect_to dashboard_path
-    respond_to do |format|
-      format.js
-    end
+    render json: { success: 'true' }
   end
 
   private
