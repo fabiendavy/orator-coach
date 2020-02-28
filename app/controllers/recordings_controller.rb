@@ -7,6 +7,7 @@ class RecordingsController < ApplicationController
   def create
     @recording = Recording.new
     @recording.speaker = current_user
+    # @recording.timestamp =
     @recording.status = "joining"
     @recording.access_key = Faker::Name.middle_name.downcase
     if @recording.save

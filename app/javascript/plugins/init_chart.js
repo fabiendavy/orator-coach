@@ -15,18 +15,18 @@ const executeChart = () => {
       type: 'polarArea',
       data: {
         labels: ['Speak slower',
-                 'Speak louder',
-                 'Look at observers',
-                 'Stay still',
-                 'Smile',
                  'Great pace',
+                 'Speak louder',
                  'Great tone',
+                 'Look at observers',
                  'Good eye contact',
+                 'Stay still',
                  'Good gesture',
+                 'Smile',
                  'Nice smile'],
         datasets: [{
           label: '# of Reviews',
-          data: reviewsValues.sort(),
+          data: reviewsValues,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
