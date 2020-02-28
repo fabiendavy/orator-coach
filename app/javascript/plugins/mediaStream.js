@@ -53,13 +53,14 @@ const videoRecording = () => {
             'type' : 'video/webm' 
           });
           chunks = [];
-          // let videoURL = window.URL.createObjectURL(blob);
+          let videoURL = window.URL.createObjectURL(blob);
           // const inputVideoToSend = document.getElementById('recording_video');
           const csrf = document.querySelector('[name="authenticity_token"]').value
           const id = document.querySelector('#recording-id').dataset.id
           // inputVideoToSend.value = blob;
           // vidSave.src = videoURL;
           var formData = new FormData();
+          // formData.append('videourl', videoURL)
           formData.append('videodata', blob)
           var xhr = new XMLHttpRequest();
           xhr.open('PATCH', `/recordings/${id}`, true);
