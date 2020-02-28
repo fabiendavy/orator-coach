@@ -1,84 +1,153 @@
 // Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+@media(max-width: 425px) {
   .grid-container {
-    width: 80%;
+    width: 95%;
     margin: auto;
   }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px 10px;
+  }
+
+  .reviews-grid i {
+    font-size: 50px;
+    color: $dark-green;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .new-review .review-btn {
+    position: relative;
+    background-color: $light-green;
+    color: $dark-gray;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    height: 60px;
+  }
+
+   .review-validation-btn {
+    background-color: $dark-green;
+    color: $dark-gray;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    height: 60px;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 15px;
+  }
+
+  .new-review .review-choice {
+    margin: 15px 0;
+    width: 100%;
+  }
+
+  .badge-count {
+      position: absolute;
+      color: white;
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      top: -5px;
+      right: -5px;
+      font-family: Rubik;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      font-weight: 700;
+      background-color: #6C7B95;
+      border-radius: 50%;
+      display: none;
+  }
+
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+// Large devices (426px and up)
+@media(min-width: 426px) {
   .grid-container {
     width: 60%;
     margin: auto;
   }
-}
 
+  .reviews-grid i {
+      font-size: 100px;
+      color: $dark-green;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+  }
 
-.reviews-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px 60px;
-}
+  .new-review .review-btn {
+    position: relative;
+    background-color: $light-green;
+    color: $dark-gray;
+    font-weight: bold;
+    font-size: 30px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    height: 100px;
+  }
 
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 60px;
+  }
 
-.new-review h1 {
-  margin-top: 30px;
-  color: $light-green;
-  font-family: "Rubik";
-  font-weight: bold;
+  .new-review .review-choice {
+    margin: 30px 0;
+    width: 100%;
+  }
 
+  .review-validation-btn {
+    background-color: $dark-green;
+    color: $dark-gray;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    height: 100px;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 15px;
+  }
+
+  .badge-count {
+      position: absolute;
+      color: white;
+      text-align: center;
+      width: 30px;
+      height: 30px;
+      top: -5px;
+      right: -13px;
+      font-family: Rubik;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      font-weight: 700;
+      background-color: #6C7B95;
+      border-radius: 50%;
+      display: none;
+  }
 }
 
 .new-review a:hover {
   text-decoration: none;
 }
 
-.new-review .review-choice {
-  margin: 30px 0;
-  width: 100%;
-}
-
-.new-review .review-btn {
-  position: relative;
-  background-color: $light-green;
-  color: $dark-gray;
-  font-weight: bold;
-  font-size: 30px;
-  border: none;
-  border-radius: 8px;
-  width: 100%;
-  height: 100px;
-}
-
 .relative {
   position: relative;
 }
 
-.badge-count {
-    position: absolute;
-    color: white;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    top: -5px;
-    right: -13px;
-    font-family: Rubik;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    font-weight: 700;
-    background-color: #6C7B95;
-    border-radius: 50%;
-    display: none;
-}
 
-.reviews-grid i {
-    font-size: 100px;
-    color: #8bbabb;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-}

@@ -13,49 +13,51 @@
             <i class="far fa-thumbs-down"></i>
             <i class="far fa-thumbs-up"></i>
             <div class="relative btn-div">
-              <%= f.submit "Speak slower", class: "review-btn my-2", id: "speak_slower" %>
+
+              <%= f.submit "Speak slower", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
             <div class="relative btn-div">
-              <%= f.submit "Great pace", class: "review-btn my-2", id: "great_pace" %>
+              <%= f.submit "Great pace", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
             <div class="relative btn-div">
-              <%= f.submit "Speak louder", class: "review-btn my-2", id: "speak_louder" %>
+              <%= f.submit "Speak louder", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
             <div class="relative btn-div">
-              <%= f.submit "Great tone", class: "review-btn my-2", id: "great_tone" %>
+              <%= f.submit "Great tone", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
             <div class="relative btn-div">
-              <%= f.submit "Look at us", class: "review-btn my-2", id: "look_at_us" %>
+              <%= f.submit "Look at us", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
             <div class="relative btn-div">
-              <%= f.submit "Good eye contact", class: "review-btn my-2", id: "eye_contact" %>
+              <%= f.submit "Good eye contact", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
             <div class="relative btn-div">
-              <%= f.submit "Stay still", class: "review-btn my-2", id: "stay_still" %>
+              <%= f.submit "Stay still", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
             <div class="relative btn-div">
-              <%= f.submit "Good gesture", class: "review-btn my-2", id: "good_gesture" %>
+              <%= f.submit "Good gesture", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
             <div class="relative btn-div">
-              <%= f.submit "Smile", class: "review-btn my-2", id: "smile" %>
+              <%= f.submit "Smile", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
             <div class="relative btn-div">
-              <%= f.submit "Nice smile", class: "review-btn my-2", id: "nice_smile" %>
+              <%= f.submit "Nice smile", class: "review-btn" %>
+
               <span class="badge-count"></span>
             </div>
           </div>
 
-          <div class="review-choice d-flex justify-content-center">
-            <%= link_to "TERMINATE ", final_review_observer_path(@observer), class: "d-flex validation-btn justify-content-center align-items-center", id: "final-review-button" %>
+          <div class="d-flex justify-content-center">
+            <%= link_to "TERMINATE ", final_review_observer_path(@observer), class: "d-flex review-validation-btn justify-content-center align-items-center", id: "final-review-button" %>
           </div>
 
         <% end %>
