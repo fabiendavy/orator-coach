@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/stats", to: "pages#stats"
   get "/library", to: "pages#library"
 
-  resources :recordings, only: [ :new, :create, :show ]
+  resources :recordings, only: [ :new, :create, :show, :update ]
   resources :observers, only: [ :new, :create, :update ] do
       member do
         get '/final_review', to: "observers#final_review"

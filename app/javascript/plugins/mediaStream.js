@@ -31,8 +31,10 @@ const videoRecording = () => {
         //add listeners for saving video/audio
         let start = document.getElementById('btn-start');
         let stop = document.getElementById('btn-stop');
-        let vidSave = document.getElementById('final-video');
-        let mediaRecorder = new MediaRecorder(mediaStreamObj);
+        // let vidSave = document.getElementById('final-video');
+        let mediaRecorder = new MediaRecorder(mediaStreamObj, {
+          mimeType: 'video/webm'
+        });
         let chunks = [];
 
         start.addEventListener('click', (ev)=>{
@@ -47,14 +49,63 @@ const videoRecording = () => {
           chunks.push(ev.data);
         }
         mediaRecorder.onstop = (ev)=>{
-          let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
+          let blob = new Blob(chunks, {
+            'type' : 'video/webm' 
+          });
           chunks = [];
-          let videoURL = window.URL.createObjectURL(blob);
-          vidSave.src = videoURL; 
+          const csrf = document.querySelector('[name="authenticity_token"]').value
+          const id = document.querySelector('#recording-id').dataset.id
+
+          var formData = new FormData();
+          formData.append('videodata', blob)
+          
+          // var xhr = new XMLHttpRequest();
+          // xhr.open('PATCH', `/recordings/${id}`, true);
+          // xhr.responseType = 'Blob';
+          // xhr.setRequestHeader("x-csrf-token", csrf); 
+          // xhr.onload = function(e) { }
+          // xhr.send(formData);
+
+          return new Promise((resolve, reject) => {
+            var xhr = new XMLHttpRequest();
+            xhr.open('PATCH', `/recordings/${id}`, true);
+            xhr.responseType = 'Blob';
+            xhr.setRequestHeader("x-csrf-token", csrf); 
+            xhr.onload = function(e) { 
+              if(xhr.status == 200 && xhr.status < 300) {
+                resolve(xhr.response)
+              } else {
+                reject(xhr.statusText)
+              }
+            };
+            xhr.send(formData);
+          }).then((data) => {
+            // console.log('YES')
+            window.location.replace('/dashboard')
+          })
+
+      
+          // fetch(`/recordings/${id}`, {
+          //   method: 'put',
+          //   body: formData,
+          //   headers: {
+          //     'Content-Type': 'video/webm',
+          //     'Content-Disposition': 'form-data',
+          //     'X-CSRF-Token': csrf
+          //   },
+          //   credentials: 'same-origin'
+          // }).then(function(response) {
+          //   return response.json();
+          // }).then(function(data) {
+          //   console.log(data);
+          // });
         }
       })
+      // .then(function(data) {
+      //   window.location.replace('/dashboard')
+      // })
       .catch(function(err) {
-        // console.log(err.name, err.message);
+        console.log(err.name, err.message);
       });
     });
   }

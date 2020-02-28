@@ -11,8 +11,13 @@
       <button id="btn-start"><i class="far fa-play-circle fa-3x"></i></button>
       <button id="btn-stop"><i class="far fa-stop-circle fa-3x"></i></button>
       <video controls id="record-video"></video>
-			<a href="/dashboard" id="dashboard-back" class="justify-content-center align-items-center recording-btn">Go to dashboard</a>
-			<video controls id="final-video"></video>
+
+      <span id='recording-id' data-id='<%= @recording.id %>'></span>
+      <%= form_for @recording, class: "d-none" do |f| %>
+        <%# <input type="file" id="recording_video" name="recording[video]"> %>
+        <%#= f.submit "Go to dashboard", id: "dashboard-back", class: "justify-content-center align-items-center recording-btn" %>
+      <% end %>
+      <%= link_to "", dashboard_path, class: "d-none", id: "dashboard-btn" %>
       
     </div>
   </div>
