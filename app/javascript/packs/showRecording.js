@@ -6,7 +6,7 @@ const recordVideo = () => {
   const stopBtn = document.getElementById('btn-stop');
   const video = document.getElementById('record-video');
   // const finalVideo = document.getElementById('final-video');
-  const backDashboard = document.getElementById('dashboard-back');
+  // const backDashboard = document.getElementById('dashboard-back');
 
   if (validateBtn) {
     validateBtn.addEventListener('click', (event) => {
@@ -32,7 +32,7 @@ const recordVideo = () => {
       stopBtn.style.display = 'none';
       video.style.display = "none";
       // finalVideo.style.display = "block";
-      backDashboard.style.display = 'flex';
+      // backDashboard.style.display = 'flex';
     });
   }
 };

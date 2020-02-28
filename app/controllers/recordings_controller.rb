@@ -22,8 +22,6 @@ class RecordingsController < ApplicationController
 
   def update
     @recording = Recording.find(params[:id])
-    @recording.video.attach(io: params[:videodata], filename: "recording#{@recording.id}.webm", content_type: 'video/webm')
-
     # @blob_url = params[:recording][:video]
     # blob = ActiveStorage::Blob.create_before_direct_upload!(
     #   filename: blob_url,
@@ -32,6 +30,8 @@ class RecordingsController < ApplicationController
     # @recording.video.attach(blob)
     # @recording.video.attach(params[:videodata])
 
+    @recording.video.attach(io: params[:videodata], filename: "recording#{@recording.id}.webm", content_type: 'video/webm')
+
     # @recording.video.attach(io: File.open(params[:videodata].path), filename: "recording#{@recording.id}.webm", content_type: 'video/webm')
 
     # @recording.video.attach(io: params[:videourl], filename: "recording#{@recording.id}.webm", content_type: 'video/webm')
@@ -39,7 +39,10 @@ class RecordingsController < ApplicationController
     # todo 
     # params[:videodata]
     # attach
-    redirect_to dashboard_path
+    # redirect_to dashboard_path
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
