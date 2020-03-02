@@ -1,0 +1,52 @@
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 200px;
+// }
+
+#navbar-home {
+  background: rgba(0,0,0,0.4);
+}
+
+.green-link-home {
+  color: $light-green;
+  background-color: rgba(255,255,255,0.2);
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 15px;
+  &:hover {
+  color: $dark-green;
+  text-decoration: none;
+  &:active {
+    text-decoration: underline;
+  }
+  }
+}
+
+// .green-button {
+//  color: $dark-gray;
+//  background-color: $light-green;
+//  border-radius: 30px;
+//  text-decoration: none;
+//  padding: 15px;
+//  font-weight: bold;
+//  &:hover {
+//   background-color: $dark-green;
+//   text-decoration: none;
+//   color: $white;
+//  }
+// }
+
+// .no-decoration{
+//   text-decoration: none;
+//   &:hover{
+//     text-decoration: none;
+//   }
+// }
