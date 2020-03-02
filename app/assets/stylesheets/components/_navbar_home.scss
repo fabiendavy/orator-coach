@@ -12,12 +12,12 @@
 // }
 
 #navbar-home {
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0);
 }
 
 .green-link-home {
   color: $light-green;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.3);
   text-decoration: none;
   border-radius: 30px;
   padding: 15px;
@@ -30,19 +30,19 @@
   }
 }
 
-// .green-button {
-//  color: $dark-gray;
-//  background-color: $light-green;
-//  border-radius: 30px;
-//  text-decoration: none;
-//  padding: 15px;
-//  font-weight: bold;
-//  &:hover {
-//   background-color: $dark-green;
-//   text-decoration: none;
-//   color: $white;
-//  }
-// }
+.green-button-home {
+  color: $dark-gray;
+  background-color: rgba(199, 240, 219, 0.6);
+  border-radius: 30px;
+  text-decoration: none;
+  padding: 15px;
+  font-weight: bold;
+  &:hover {
+   background-color: $dark-green;
+   text-decoration: none;
+   color: $white;
+  }
+ }
 
 // .no-decoration{
 //   text-decoration: none;
