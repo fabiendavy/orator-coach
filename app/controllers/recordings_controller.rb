@@ -23,7 +23,7 @@ class RecordingsController < ApplicationController
 
   def update
     @recording = Recording.find(params[:id])
-    @recording.timestamp = params[:recording_time].value
+    @recording.timestamp = params[:timestamp]
     @recording.save
     # @blob_url = params[:recording][:video]
     # blob = ActiveStorage::Blob.create_before_direct_upload!(

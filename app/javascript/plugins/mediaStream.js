@@ -36,8 +36,12 @@ const videoRecording = () => {
           mimeType: 'video/webm'
         });
         let chunks = [];
+        let recordHit;
+        let startTime;
 
         start.addEventListener('click', (ev)=>{
+          recordHit = new Date();
+          startTime = recordHit.getTime();
           mediaRecorder.start();
           // console.log(mediaRecorder.state);
         })
@@ -58,6 +62,7 @@ const videoRecording = () => {
 
           var formData = new FormData();
           formData.append('videodata', blob)
+          formData.append('timestamp', startTime)
           
           // var xhr = new XMLHttpRequest();
           // xhr.open('PATCH', `/recordings/${id}`, true);

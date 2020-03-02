@@ -9,7 +9,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @recordings = Recording.where(speaker: current_user)
-    raise
     if params[:recording_id]
       @recording = Recording.find(params[:recording_id])
       @observers = @recording.observers
