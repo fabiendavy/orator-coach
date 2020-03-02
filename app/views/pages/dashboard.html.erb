@@ -1,59 +1,39 @@
-<div class="container-fluid">
-  <div class="row justify-content">
+<div class="dashboard">
+  <div class="dashboard-video">
 
-    <div class="col-8">
-      <video
-          id="my-player"
-          class="video-player"
-          controls
-          preload="auto"
-          poster="//vjs.zencdn.net/v/oceans.png"
-          data-setup='{}'>
-        <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4"></source>
-        <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm"></source>
-        <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg"></source>
-        <p class="vjs-no-js">
-          To view this video please enable JavaScript, and consider upgrading to a
-          web browser that
-          <a href="https://videojs.com/html5-video-support/" target="_blank">
-            supports HTML5 video
-          </a>
-        </p>
-      </video>
+  </div>
 
-      <div>
-        <% if @observers %>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <% @observers.each do |observer| %>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#contact" role="tab" aria-selected="false" aria-controls="#nav-contact" id= <% "#{observer.id}" %> > <%= observer.id %> </a>
-          </li>
-          <% end %>
-        </ul>
+  <div class="dashboard-remote-control">
+  
+  </div>
+  
+  <div class="dashboard-reviews">
+
+     <div>
+      <% if @observers %>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <% @observers.each do |observer| %>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#contact" role="tab" aria-selected="false" aria-controls="#nav-contact" id= <% "#{observer.id}" %> > <%= observer.id %> </a>
+        </li>
         <% end %>
-<!--
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Hell</div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-        </div> -->
-
-      </div>
-
+      </ul>
+      <% end %>
+      <!--
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Hell</div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+      </div> -->
     </div>
 
-    <div class="col-3">
-      <div class="thumbnails-containers">
-        <% @recordings.each do |recording| %>
-          <%= link_to dashboard_path(recording_id: recording.id) do %>
-            <div class="test-box card recording-thumbnail" data-recordingid= <%= recording %> >
-              <h3 class="card-title">Thumbnail</h3>
-              <p><%= recording.created_at.strftime("%d-%m-%Y") %></p>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
+  </div>
+
+  <div class="dashboard-comments">
+
+  </div>
+
+  <div class="dashboard-thumbnails">
 
   </div>
 </div>
