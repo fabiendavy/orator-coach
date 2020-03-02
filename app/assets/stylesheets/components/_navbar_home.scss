@@ -15,12 +15,42 @@
   background: rgba(0,0,0,0);
 }
 
-.green-link-home {
+.green-link-home-dashboard {
   color: $light-green;
   background-color: rgba(255,255,255,0.3);
   text-decoration: none;
   border-radius: 30px;
-  padding: 15px;
+  padding: 15px 20px;
+  &:hover {
+  color: $dark-green;
+  text-decoration: none;
+  &:active {
+    text-decoration: underline;
+  }
+  }
+}
+
+.green-link-home-stats {
+  color: $light-green;
+  background-color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  &:hover {
+  color: $dark-green;
+  text-decoration: none;
+  &:active {
+    text-decoration: underline;
+  }
+  }
+}
+
+.green-link-home-library {
+  color: $light-green;
+  background-color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 15px 30px;
   &:hover {
   color: $dark-green;
   text-decoration: none;
