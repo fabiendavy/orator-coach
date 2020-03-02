@@ -2,8 +2,8 @@
   <div class="dashboard-video">
     <% if @recordings.all.count < 1 %>
       <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recordings.first.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
-    <% else %>
-      <%= cl_video_tag("https://www.youtube.com/watch?v=962eYqe--Yc.mp4", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
+    <%# else %>
+      <%#= cl_video_tag("https://www.youtube.com/watch?v=962eYqe--Yc.mp4", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
     <% end %>
   </div>
 
@@ -16,6 +16,7 @@
 
       <div class="observer-list">
         <ul class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <li>Observers</li>
           <% if @observers %>
             <% @observers.each do |observer| %>
               <li class="nav-item">
@@ -27,6 +28,7 @@
       </div>
 
       <div class="tab-content" id="v-pills-tabContent">
+        <h3>Comments</h3>
         <% if @observers %>
             <% @observers.each do |observer| %>
               <div class="tab-pane fade" id="<%= "v-pills-#{observer.id}" %>" role="tabpanel" aria-labelledby="<%= "v-pills-#{observer.id}-tab" %>" > <%= observer.final_review %>  </div>
