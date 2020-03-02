@@ -46,7 +46,7 @@
 
   <div class="dashboard-thumbnails">
 
-    <% @recordings.each do |record| %>
+    <% @recordings.sort_by{ |video| video.created_at }.reverse.each do |record| %>
       <% if record.video.attached? %>
         <div class="video" style="background-image: url('https://res.cloudinary.com/fabdv/video/upload/so_0/<%= record.video.key %>.jpg');" data-recordingid= <%= record.id %> data-url=<%= record.video.key %>>
           <i class="far fa-play-circle fa-3x"></i>
