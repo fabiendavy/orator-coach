@@ -1,0 +1,82 @@
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 200px;
+// }
+
+#navbar-home {
+  background: rgba(0,0,0,0);
+}
+
+.green-link-home-dashboard {
+  color: $light-green;
+  background-color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 15px 20px;
+  &:hover {
+  color: $dark-green;
+  text-decoration: none;
+  &:active {
+    text-decoration: underline;
+  }
+  }
+}
+
+.green-link-home-stats {
+  color: $light-green;
+  background-color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  &:hover {
+  color: $dark-green;
+  text-decoration: none;
+  &:active {
+    text-decoration: underline;
+  }
+  }
+}
+
+.green-link-home-library {
+  color: $light-green;
+  background-color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  &:hover {
+  color: $dark-green;
+  text-decoration: none;
+  &:active {
+    text-decoration: underline;
+  }
+  }
+}
+
+.green-button-home {
+  color: $dark-gray;
+  background-color: rgba(199, 240, 219, 0.6);
+  border-radius: 30px;
+  text-decoration: none;
+  padding: 15px;
+  font-weight: bold;
+  &:hover {
+   background-color: $dark-green;
+   text-decoration: none;
+   color: $white;
+  }
+ }
+
+// .no-decoration{
+//   text-decoration: none;
+//   &:hover{
+//     text-decoration: none;
+//   }
+// }
