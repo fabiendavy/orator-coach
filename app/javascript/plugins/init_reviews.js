@@ -1,13 +1,14 @@
 // const reviewButton = document.querySelectorAll(".review-btn");
 const recordButton = document.getElementById("btn-start");
+const recordInput = document.getElementById('recording-time');
 
   const initReviews = () => {
     if (recordButton) {
     recordButton.addEventListener("click", (event) => {
       const recordHit = new Date();
       const startTime = recordHit.getTime();
-      console.log(startTime);
-      return startTime;
+      recordInput.value = startTime;
+      console.log(recordInput);
     })
     // let sessionReviews = [];
     // reviewButton.forEach( button => button.addEventListener("click", (event) => {
