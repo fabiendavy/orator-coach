@@ -1,0 +1,60 @@
+.dashboard-reviews {
+  background-color: $dark-gray;
+  padding-top: 30px;
+}
+
+.observer-list h3 {
+  text-align: left;
+  font-family: "Rubik";
+  padding: 0 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: $light-gray;
+}
+
+.observer-list {
+  width: 40%;
+  padding-left: 20px;
+  overflow: auto;
+  height: 300px;
+}
+
+.observer-list .nav-item {
+  text-decoration: none;
+  color: $light-green;
+  padding: 0 20px;
+}
+
+.dashboard-reviews .tab-content {
+  text-align: left;
+  background-color: $dark-gray;
+  color: $light-green;
+  font-family: "Karla";
+  width: 100%;
+  margin-left: 20px;
+  padding: 0 20px;
+  height: 300px;
+  overflow: auto;
+}
+
+.tab-content h3 {
+  text-align: left;
+  font-family: "Rubik";
+  font-size: 24px;
+  font-weight: bold;
+  color: $light-gray;
+}
+
+.nav-item a {
+  color: $light-green;
+  border: 1px solid $light-green;
+  margin: 10px 0;
+}
+
+.nav-pills .nav-link.active {
+  background-color: $light-gray;
+}
+
+body {
+  overflow: hidden;
+}

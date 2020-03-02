@@ -1,9 +1,9 @@
 <div class="dashboard">
   <div class="dashboard-video">
     <% if params[:recording_id] %>
-      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recording.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
+      <%= cl_video_tag("https://res.cloudinary.com/mguillermit/video/upload/#{@recording.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
     <% else %>
-      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recordings.all.first.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
+      <%= cl_video_tag("https://res.cloudinary.com/mguillermit/video/upload/#{@recordings.all.first.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
     <% end %>
   </div>
 
@@ -16,12 +16,17 @@
 
       <div class="observer-list">
         <ul class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-          <li>Observers</li>
+          <h3>Observers</h3>
           <% if @observers %>
-            <% @observers.each do |observer| %>
-              <li class="nav-item">
+            <% @observers.each_with_index do |observer, index| %>
+              <% if index == 0 %>
+                <li class="nav-item">
+                  <a class="nav-link active" id="<%= "v-pills-#{observer.id}-tab" %>" data-toggle="pill" href="#<%= "v-pills-#{observer.id}" %>" role="tab" aria-controls="<%= "v-pills-#{observer.id}" %>" aria-selected="false" > <%= observer.user.email %> </a>
+                </li>
+              <% else %>
+                <li class="nav-item">
                 <a class="nav-link" id="<%= "v-pills-#{observer.id}-tab" %>" data-toggle="pill" href="#<%= "v-pills-#{observer.id}" %>" role="tab" aria-controls="<%= "v-pills-#{observer.id}" %>" aria-selected="false" > <%= observer.user.email %> </a>
-              </li>
+              <% end %>
             <% end %>
           <% end %>
         </ul>
@@ -30,8 +35,12 @@
       <div class="tab-content" id="v-pills-tabContent">
         <h3>Comments</h3>
         <% if @observers %>
-            <% @observers.each do |observer| %>
-              <div class="tab-pane fade" id="<%= "v-pills-#{observer.id}" %>" role="tabpanel" aria-labelledby="<%= "v-pills-#{observer.id}-tab" %>" > <%= observer.final_review %>  </div>
+            <% @observers.each_with_index do |observer, index| %>
+              <% if index == 0 %>
+                <div class="tab-pane active" id="<%= "v-pills-#{observer.id}" %>" role="tabpanel" aria-labelledby="<%= "v-pills-#{observer.id}-tab" %>" > <%= observer.final_review %>  </div>
+              <% else %>
+                <div class="tab-pane fade" id="<%= "v-pills-#{observer.id}" %>" role="tabpanel" aria-labelledby="<%= "v-pills-#{observer.id}-tab" %>" > <%= observer.final_review %>  </div>
+              <% end %>
             <% end %>
         <% end %>
       </div>
@@ -48,7 +57,7 @@
 
     <% @recordings.sort_by{ |video| video.created_at }.reverse.each do |record| %>
       <% if record.video.attached? %>
-        <div class="video" style="background-image: url('https://res.cloudinary.com/fabdv/video/upload/so_0/<%= record.video.key %>.jpg');" data-recordingid= <%= record.id %> data-url=<%= record.video.key %>>
+        <div class="video" style="background-image: url('https://res.cloudinary.com/mguillermit/video/upload/so_0/<%= record.video.key %>.jpg');" data-recordingid= <%= record.id %> data-url=<%= record.video.key %>>
           <i class="far fa-play-circle fa-3x"></i>
           <span class="date"> <%= record.video.created_at.strftime("%d/%m/%y") %> </span>
         </div>
