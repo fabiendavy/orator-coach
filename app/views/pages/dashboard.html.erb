@@ -1,6 +1,6 @@
 <div class="dashboard">
   <div class="dashboard-video">
-
+    <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recordings.first.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
   </div>
 
   <div class="dashboard-remote-control">
@@ -37,7 +37,7 @@
 
     <% @recordings.each do |record| %>
       <% if record.video.attached? %>
-        <div class="video" style="background-image: url('https://res.cloudinary.com/fabdv/video/upload/so_0/<%= record.video.key %>.jpg');" data-recordingid= <%= record.id %>>
+        <div class="video" style="background-image: url('https://res.cloudinary.com/fabdv/video/upload/so_0/<%= record.video.key %>.jpg');" data-recordingid= <%= record.id %> data-url=<%= record.video.key %>>
           <i class="far fa-play-circle fa-3x"></i>
           <span class="date"> <%= record.video.created_at.strftime("%d/%m/%y") %> </span>
         </div>
@@ -48,6 +48,5 @@
         </div>
       <% end %>
     <% end %>
-
   </div>
 </div>
