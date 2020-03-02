@@ -9,7 +9,7 @@
 
   <div class="dashboard-remote-control">
   </div>
-  
+
   <div class="dashboard-reviews">
 
     <div class="d-flex">
@@ -53,7 +53,6 @@
       <% else %>
         <div class="video" style="background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2540&q=80');" data-recordingid= <%= record.id %>>
           <i class="far fa-play-circle fa-3x"></i>
-          <span class="date"> <%= record.video.created_at.strftime("%d/%m/%y") %> </span>
         </div>
       <% end %>
     <% end %>
