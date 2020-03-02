@@ -9,6 +9,24 @@
   
   <div class="dashboard-reviews">
 
+     <div>
+      <% if @observers %>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <% @observers.each do |observer| %>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#contact" role="tab" aria-selected="false" aria-controls="#nav-contact" id= <% "#{observer.id}" %> > <%= observer.id %> </a>
+        </li>
+        <% end %>
+      </ul>
+      <% end %>
+      <!--
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Hell</div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+      </div> -->
+    </div>
+
   </div>
 
   <div class="dashboard-comments">

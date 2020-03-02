@@ -9,6 +9,10 @@ class PagesController < ApplicationController
 
   def dashboard
     @recordings = Recording.where(speaker: current_user)
+    if params[:recording_id]
+      @recording = Recording.find(params[:recording_id])
+      @observers = @recording.observers
+    end
   end
 
   def stats
@@ -76,4 +80,11 @@ class PagesController < ApplicationController
 
     reviews_count
   end
+
+  def final_review
+    # @recording = Recording.find()
+    # @observers = Recording.observers
+
+  end
+
 end
