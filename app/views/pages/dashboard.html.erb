@@ -22,6 +22,19 @@
       </video>
 
       <div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <% @observers.each do |observer| %>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#contact" role="tab" aria-selected="false" aria-controls= <% observer.id %> id= <% observer.id %> > <%= observer.id %> </a>
+          </li>
+          <% end %>
+        </ul>
+<!--
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Hell</div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        </div> -->
 
       </div>
 
@@ -30,8 +43,8 @@
     <div class="col-3">
       <div class="thumbnails-containers">
         <% @recordings.each do |recording| %>
-          <%= link_to dashboard_path do %>
-            <div class="test-box card recording-thumbnail" data-recordingid= <%= recording.id %> >
+          <%= link_to dashboard_path(recording_id: recording.id) do %>
+            <div class="test-box card recording-thumbnail" data-recordingid= <%= recording %> >
               <h3 class="card-title">Thumbnail</h3>
               <p><%= recording.created_at.strftime("%d-%m-%Y") %></p>
             </div>
