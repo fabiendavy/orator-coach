@@ -54,7 +54,8 @@ class PagesController < ApplicationController
   end
 
   def count_reviews_type
-    reviews_count = { 'speak-slower' => 0,
+    reviews_count = {
+                      'speak-slower' => 0,
                       'great-pace' => 0,
                       'speak-louder' => 0,
                       'great-tone' => 0,
