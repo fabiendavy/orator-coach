@@ -1,6 +1,6 @@
 class Recording < ApplicationRecord
   belongs_to :speaker, class_name: 'User', foreign_key: 'user_id'
-  has_many :observers
+  has_many :observers, dependent: :destroy
   has_many :reviews, through: :observers
   has_one_attached :video
 

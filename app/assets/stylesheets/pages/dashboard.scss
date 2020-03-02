@@ -35,6 +35,39 @@
   
 .dashboard-thumbnails {
   // background-color: pink;
+  border-left: 2px solid $light-gray;
   grid-column: 6 / 7;
   grid-row: 1 / 6;
+  overflow-y: auto;
+}
+
+.video {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  margin: 20px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(60%);
+  transition: 0.2s;
+  i {
+    display: none;
+  }
+  &:hover {
+    box-shadow: 0 0 10px $dark-green;
+    cursor: pointer;
+    filter: brightness(100%);
+    i {
+      display: inline;
+      color: $dark-green;
+    }
+  } 
+  span.date {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    color: $light-green;
+  }
 }

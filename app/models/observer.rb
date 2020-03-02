@@ -1,5 +1,5 @@
 class Observer < ApplicationRecord
   belongs_to :user
   belongs_to :recording
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 end
