@@ -48,7 +48,7 @@ h3 {
 }
 
 .card-product p {
-  font-size: 16px;
+  font-size: 24px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -57,4 +57,14 @@ h3 {
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.number {
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 0 0 3px rgba(255,255,255,0.4)
+}
+
+.text {
+  font-size: 22px;
 }
