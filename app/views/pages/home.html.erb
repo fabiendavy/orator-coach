@@ -1,2 +1,48 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<body>
+  <div class="background" style="background-image: url(https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)";>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id="navbar-home">
+
+      <!-- Left section div (only clickable logo) -->
+      <div>
+        <%= link_to "#", class: "navbar-brand" do %>
+          <%= image_tag "orator_logo.png" %>
+        <% end %>
+      </div>
+
+    <!-- Right section div -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Navigation links -->
+        <%= link_to(new_recording_path, class: "green-button mr-5", confirm: "Launch new speech recording") do %>
+            <i class="fas fa-plus"></i> <span>New speech</span>
+        <% end %>
+        <%= link_to "Dashboard", dashboard_path, class: "nav-link green-link-home mx-4" %>
+        <%= link_to "MyStats", stats_path, class: "nav-link green-link-home mx-4" %>
+        <%= link_to "Library", library_path, class: "nav-link green-link-home mx-4 mr-5" %>
+
+        <!-- Login button -->
+        <ul class="navbar-nav mr-auto">
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class= "banner" >
+      <h1>ORATOR</h1>
+      <p>The public speaking coach</p>
+    </div>
+  </div>
+</body>
