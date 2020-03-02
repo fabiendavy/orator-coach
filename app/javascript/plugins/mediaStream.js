@@ -81,7 +81,7 @@ const videoRecording = () => {
             xhr.send(formData);
           }).then((data) => {
             // console.log('YES')
-            window.location.replace('/dashboard')
+            window.location.replace('/dashboard');
           })
 
       

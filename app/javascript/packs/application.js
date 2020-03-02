@@ -27,6 +27,7 @@ import "bootstrap";
 import { executeChart } from "../plugins/init_chart";
 import { videoRecording } from "../plugins/mediaStream";
 import { recordVideo } from "./showRecording";
+import { displayVideo } from "./displayVideo";
 import { initSweetalert } from '../plugins/init_sweet_alert';
 import { initBadge } from '../plugins/init_badges';
 import { initReviews } from '../plugins/init_reviews';
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   executeChart();
   videoRecording();
   recordVideo();
+  displayVideo();
   initSweetalert();
   initBadge();
   initReviews();
