@@ -75,6 +75,30 @@
   }
  }
 
+.navbar-button {
+  color: #8bbaba;
+}
+
+ @media(max-width: 575px) {
+  .navbar-avatar {
+    display: none;
+  }
+
+  .navbar-hidden {
+    display: none;
+  }
+}
+
+@media(min-width: 575px) {
+  .dropdown-new-recording {
+    display: none;
+  }
+
+  .navbar-dropdown-show {
+    display: none;
+  }
+}
+
 // .no-decoration{
 //   text-decoration: none;
 //   &:hover{

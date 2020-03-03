@@ -15,6 +15,7 @@ const displayVideo = () => {
     "Nice smile": '<div class="good-review"><i class="fas fa-smile"></i> <i class="fas fa-thumbs-up"></i></div>'
   };
 
+
   if (videos && videoDiv) {
     const cld = cloudinary.Cloudinary.new({ cloud_name: "my-cloud", secure: true});
     const reviewsType = document.querySelectorAll('.review-type');
@@ -26,11 +27,25 @@ const displayVideo = () => {
       recordingTimestamp = parseInt(recordingTimestamp.value) / 1000;
     }
 
+    // Method to convert seconds in min:sec format
+    const timeConverter = (seconds) => {
+      let min = Math.floor(seconds / 60);
+      let sec = seconds - (min * 60)
+      let time;
+      if (sec < 10) {
+        time = `${min}:0${sec}`
+      } else {
+        time = `${min}:${sec}`
+      }
+      return time
+    }
+
     const timestamps = [];
     const types = [];
     reviewsTimestamp.forEach((review) => {
       timestamps.push(Math.floor(parseInt(review.innerText) - recordingTimestamp));
     });
+
     reviewsType.forEach((review) => {
       types.push(review.innerText);
     });
@@ -40,12 +55,12 @@ const displayVideo = () => {
       // console.log(event.eventData.time);
       timestamps.forEach((item, index) => {
         if (event.eventData.time === item) {
-          const html = `<div class="review"><span class="review-type">${types[index]}</span> <span class="review-timestamp">00:0${item}</span></div>`;
+          const html = `<div class="review"><span class="review-type">${types[index]}</span> <span class="review-timestamp">${timeConverter(item)}</span></div>`;
           commentsDiv.insertAdjacentHTML('beforeend', html);
           animCommentsDiv.insertAdjacentHTML('beforeend', icons[types[index]]);
         } 
       });
-    })  
+    })
 
     videos.forEach((video) => {
       video.addEventListener('click', (event) => {
