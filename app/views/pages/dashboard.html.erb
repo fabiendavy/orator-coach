@@ -1,9 +1,9 @@
 <div class="dashboard">
   <div class="dashboard-video">
-    <% if params[:recording_id] %>
-      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recording.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
-    <%# else %>
-      <%#= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recordings.all.last.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
+    <% if params[:recording_id] && @recording.video.attached? %>
+      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recording.video.key}.webm", preload: "auto", controls: true, autoplay: true, id: "video-display", class: "cld-video-player") %>
+    <% else %>
+      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recordings.all.last.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
     <% end %>
   </div>
 
@@ -69,3 +69,4 @@
     <% end %>
   </div>
 </div>
+
