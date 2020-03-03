@@ -22,7 +22,7 @@
   }
 }
 
-.dashboard-remote-control {
+.dashboard-animated-comments {
   // background-color: purple;
   grid-column: 4 / 5;
   grid-row: 1 / 4;
@@ -79,4 +79,35 @@
     bottom: 5px;
     color: $light-green;
   }
+}
+
+.dashboard-animated-comments {
+  position: relative;
+}
+
+.good-review, .bad-review {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 65px;
+  text-align: center;
+  font-weight: lighter;
+  border-radius: 50px;
+  padding: 8px;
+  z-index: 3;
+  animation: bubbleMove 5s;
+}
+
+.bad-review {
+  background-color: rgb(173, 102, 102);
+}
+.good-review {
+  background-color: rgb(102, 173, 102);
+}
+
+@keyframes bubbleMove {
+  0%   {bottom: 0%;}
+  25%  {bottom: 25%;}
+  75%  {bottom: 50%}
+  100% {bottom: 100%;}
 }

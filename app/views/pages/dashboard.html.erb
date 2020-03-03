@@ -3,11 +3,11 @@
     <% if params[:recording_id] && @recording.video.attached? %>
       <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recording.video.key}.webm", preload: "auto", controls: true, autoplay: false, id: "video-display", class: "cld-video-player") %>
     <% else %>
-      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recordings.all.last.video.key}.webm", preload: "auto", controls: true, autoplay: false, id: "video-display", class: "cld-video-player") %>
+      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/i5hxwtkl5w7xrxq2fd3y1veo9z9z.webm", preload: "auto", controls: true, autoplay: false, id: "video-display", class: "cld-video-player") %>
     <% end %>
   </div>
 
-  <div class="dashboard-remote-control">
+  <div class="dashboard-animated-comments">
   </div>
 
   <div class="dashboard-reviews">
