@@ -1,0 +1,29 @@
+<div class="container">
+  <%= form_tag ressources_index_path, method: :get, class: "search-bar form-inline justify-content-center" do %>
+    <div class="input-area">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a ressource"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <div class="media">
+    <% @ressources.each do |ressource| %>
+      <%= link_to ressource.ressource_url do %>
+        <div class="card-content">
+          <%= image_tag ressource.thumbnail, alt: "thumbnail" %>
+          <div class="card-content-infos">
+            <div>
+              <h2><%= ressource.title %></h2>
+              <p><%= ressource.description %></p>
+            </div>
+            <%= image_tag ressource.img_url, class: "card-content-source logo-bordered" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

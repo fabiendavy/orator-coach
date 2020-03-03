@@ -23,9 +23,9 @@ class PagesController < ApplicationController
     @reviews_type_count = count_reviews_type
   end
 
-  def library
+  # def library
 
-  end
+  # end
 
   private
 
