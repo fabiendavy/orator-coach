@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_093630) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.string "access_key"
-    t.integer "timestamp"
+    t.string "timestamp"
     t.index ["user_id"], name: "index_recordings_on_user_id"
   end
 
