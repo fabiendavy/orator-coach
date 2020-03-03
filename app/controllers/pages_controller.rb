@@ -12,6 +12,7 @@ class PagesController < ApplicationController
     if params[:recording_id]
       @recording = Recording.find(params[:recording_id])
       @observers = @recording.observers
+      @reviews = @recording.reviews
     end
   end
 
