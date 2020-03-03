@@ -1,7 +1,7 @@
-// .dashboard-comments {
-//   overflow: auto;
-//   z-index: 2;
-// }
+.dashboard-comments {
+  overflow: auto;
+  z-index: 2;
+}
 
 
 .dashboard-comments .review {
@@ -14,7 +14,7 @@
   border-radius: 10px;
   align-items: center;
   animation: mymove 0.5s;
-  z-index: 2;
+  z-index: 3;
 }
 
 // @keyframes mymove {
