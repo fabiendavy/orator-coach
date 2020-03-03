@@ -41,6 +41,30 @@
  }
 }
 
+.login {
+  color: $light-green;
+  &:hover {
+    background-color: rgba(0,0,0,.0);
+    text-decoration: none;
+    color: $dark-green;
+  }
+}
+
+.dropdown-menu {
+  background-color: rgba(0,0,0,.0);
+  border: none;
+  border-radius: 5px;
+}
+
+.dropdown-item {
+  border-radius: 5px;
+  &:hover {
+    background-color: rgba(0,0,0,.0);
+    text-decoration: none;
+    color: #8BBABA;
+  }
+}
+
 .no-decoration{
   text-decoration: none;
   &:hover{
