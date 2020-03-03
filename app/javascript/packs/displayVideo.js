@@ -6,6 +6,7 @@ const displayVideo = () => {
     const cld = cloudinary.Cloudinary.new({ cloud_name: "my-cloud", secure: true});
     const reviewsType = document.querySelectorAll('.review-type');
     const reviewsTimestamp = document.querySelectorAll('.review-timestamp');
+    const commentsDiv = document.querySelector('.dashboard-comments');
     let recordingTimestamp = document.getElementById('recording-timestamp');
     if (recordingTimestamp) {
       recordingTimestamp = parseInt(recordingTimestamp.value) / 1000;
@@ -24,9 +25,12 @@ const displayVideo = () => {
     let vplayer = cld.videoPlayer("video-display", { playedEventTimes: [...Array(121).keys()] });
     vplayer.on('timeplayed', (event) => {
       // console.log(event.eventData.time);
+      commentsDiv.innerText = "";
       timestamps.forEach((item, index) => {
         if (event.eventData.time === item) {
           console.log(types[index]);
+          const html = `<div class="review"><span class="review-type">${types[index]}</span> <span class="review-timestamp">00:0${item}</span></div>`;
+          commentsDiv.insertAdjacentHTML('beforeend', html);
         } 
       });
     })  

@@ -52,11 +52,11 @@
   <div class="dashboard-comments">
     <% if @reviews && @recording %>
       <input type="hidden" value="<%= @recording.timestamp %>" id="recording-timestamp"> 
+        <div class="review" style="display: none;">
       <% @reviews.each do |review| %>
-        <div class="review">
           <span class="review-type"><%= review.review_type %></span> <span class="review-timestamp"><%= review.created_at.to_i %></span>
-        </div>
       <% end %>
+        </div>
     <% end %>
   </div>
 
