@@ -1,9 +1,9 @@
 <div class="dashboard">
   <div class="dashboard-video">
     <% if params[:recording_id] %>
-      <%= cl_video_tag("https://res.cloudinary.com/mguillermit/video/upload/#{@recording.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
+      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recording.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
     <% else %>
-      <%= cl_video_tag("https://res.cloudinary.com/mguillermit/video/upload/#{@recordings.all.first.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
+      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recordings.all.first.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
     <% end %>
   </div>
 
@@ -57,7 +57,7 @@
 
     <% @recordings.sort_by{ |video| video.created_at }.reverse.each do |record| %>
       <% if record.video.attached? %>
-        <div class="video" style="background-image: url('https://res.cloudinary.com/mguillermit/video/upload/so_0/<%= record.video.key %>.jpg');" data-recordingid= <%= record.id %> data-url=<%= record.video.key %>>
+        <div class="video" style="background-image: url('https://res.cloudinary.com/fabdv/video/upload/so_0/<%= record.video.key %>.jpg');" data-recordingid= <%= record.id %> data-url=<%= record.video.key %>>
           <i class="far fa-play-circle fa-3x"></i>
           <span class="date"> <%= record.video.created_at.strftime("%d/%m/%y") %> </span>
         </div>
