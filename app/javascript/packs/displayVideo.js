@@ -2,19 +2,31 @@ const displayVideo = () => {
   const videoDiv = document.getElementById('video-display');
   const videos = document.querySelectorAll('.video');
 
-  const icons = {
-    "Speak slower": '<div class="bad-review"><i class="fas fa-bullhorn"></i> <i class="fas fa-minus"></i></div>',
-    "Speak louder": '<div class="bad-review"><i class="fas fa-bullhorn"></i> <i class="fas fa-plus"></i></div>',
-    "Look at us": '<div class="bad-review"><i class="fas fa-eye"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-male"></i></div>',
-    "Stay still": '<div class="bad-review"><i class="fas fa-male"></i> <i class="fas fa-plus"></i></div>',
-    "Smile": '<div class="bad-review"><i class="fas fa-smile"></i> <i class="fas fa-plus"></i></div>',
-    "Great pace": '<div class="good-review"><i class="fas fa-thumbs-up"></i></div>',
-    "Great tone": '<div class="good-review"><i class="fas fa-thumbs-up"></i></div>',
-    "Good eye contact": '<div class="good-review"><i class="fas fa-eye"></i> <i class="fas fa-thumbs-up"></i></div>',
-    "Good gesture": '<div class="good-review"><i class="fas fa-walking"></i> <i class="fas fa-thumbs-up"></i></div>',
-    "Nice smile": '<div class="good-review"><i class="fas fa-smile"></i> <i class="fas fa-thumbs-up"></i></div>'
+  const animIcons = {
+    "Speak slower": '<div class="bad-review">😢</div>',
+    "Speak louder": '<div class="bad-review">😢</div>',
+    "Look at us": '<div class="bad-review">😢</div>',
+    "Stay still": '<div class="bad-review">🕴😢</div>',
+    "Smile": '<div class="bad-review">😢</div>',
+    "Great pace": '<div class="good-review">😍</div>',
+    "Great tone": '<div class="good-review">😍</div>',
+    "Good eye contact": '<div class="good-review">😍</div>',
+    "Good gesture": '<div class="good-review">🕺😍</div>',
+    "Nice smile": '<div class="good-review">😍</div>'
   };
 
+  const reviewsIcons = {
+    "Speak slower": '<i class="fas fa-bullhorn"></i> <i class="fas fa-minus"></i>',
+    "Speak louder": '<i class="fas fa-bullhorn"></i> <i class="fas fa-plus"></i>',
+    "Look at us": '<i class="fas fa-eye"></i> <i class="fas fa-plus"></i>',
+    "Stay still": '<i class="fas fa-male"></i> <i class="fas fa-plus"></i>',
+    "Smile": '<i class="fas fa-smile"></i> <i class="fas fa-plus"></i>',
+    "Great pace": '<i class="fas fa-volume-up"></i> <i class="fas fa-thumbs-up"></i>',
+    "Great tone": '<i class="fas fa-volume-up"></i> <i class="fas fa-thumbs-up"></i>',
+    "Good eye contact": '<i class="fas fa-eye"></i> <i class="fas fa-thumbs-up"></i>',
+    "Good gesture": '<i class="fas fa-walking"></i> <i class="fas fa-thumbs-up"></i>',
+    "Nice smile": '<i class="fas fa-smile"></i> <i class="fas fa-thumbs-up"></i>'
+  };
 
   if (videos && videoDiv) {
     const cld = cloudinary.Cloudinary.new({ cloud_name: "my-cloud", secure: true});
@@ -55,9 +67,9 @@ const displayVideo = () => {
       // console.log(event.eventData.time);
       timestamps.forEach((item, index) => {
         if (event.eventData.time === item) {
-          const html = `<div class="review"><span class="review-type">${types[index]}</span> <span class="review-timestamp">${timeConverter(item)}</span></div>`;
+          const html = `<div class="review"><span style="width: 25%;">${reviewsIcons[types[index]]}</span><span class="review-type" style="width: 75%;">${types[index]}</span> <span class="review-timestamp">${timeConverter(item)}</span></div>`;
           commentsDiv.insertAdjacentHTML('beforeend', html);
-          animCommentsDiv.insertAdjacentHTML('beforeend', icons[types[index]]);
+          animCommentsDiv.insertAdjacentHTML('beforeend', animIcons[types[index]]);
         } 
       });
     })
