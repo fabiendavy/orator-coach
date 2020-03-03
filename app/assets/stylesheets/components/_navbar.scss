@@ -41,6 +41,15 @@
  }
 }
 
+.login {
+  color: $light-green;
+  &:hover {
+    background-color: rgba(0,0,0,.0);
+    text-decoration: none;
+    color: $dark-green;
+  }
+}
+
 .dropdown-menu {
   background-color: rgba(0,0,0,.0);
   border: none;
