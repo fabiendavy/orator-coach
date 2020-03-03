@@ -25,10 +25,8 @@ const displayVideo = () => {
     let vplayer = cld.videoPlayer("video-display", { playedEventTimes: [...Array(121).keys()] });
     vplayer.on('timeplayed', (event) => {
       // console.log(event.eventData.time);
-      commentsDiv.innerText = "";
       timestamps.forEach((item, index) => {
         if (event.eventData.time === item) {
-          console.log(types[index]);
           const html = `<div class="review"><span class="review-type">${types[index]}</span> <span class="review-timestamp">00:0${item}</span></div>`;
           commentsDiv.insertAdjacentHTML('beforeend', html);
         } 
