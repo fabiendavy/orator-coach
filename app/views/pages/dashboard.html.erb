@@ -1,9 +1,9 @@
 <div class="dashboard">
   <div class="dashboard-video">
     <% if params[:recording_id] && @recording.video.attached? %>
-      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recording.video.key}.webm", preload: "auto", controls: true, autoplay: true, id: "video-display", class: "cld-video-player") %>
+      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recording.video.key}.webm", preload: "auto", controls: true, autoplay: false, id: "video-display", class: "cld-video-player") %>
     <% else %>
-      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recordings.all.last.video.key}.webm", preload: "auto", controls: true, autoplay: true, fallback_content: "Your browser does not support HTML5 video tags", id: "video-display" ) %>
+      <%= cl_video_tag("https://res.cloudinary.com/fabdv/video/upload/#{@recordings.all.last.video.key}.webm", preload: "auto", controls: true, autoplay: false, id: "video-display", class: "cld-video-player") %>
     <% end %>
   </div>
 
@@ -50,7 +50,14 @@
   </div>
 
   <div class="dashboard-comments">
-
+    <% if @reviews && @recording %>
+      <input type="hidden" value="<%= @recording.timestamp %>" id="recording-timestamp"> 
+      <% @reviews.each do |review| %>
+        <div class="review">
+          <span class="review-type"><%= review.review_type %></span> <span class="review-timestamp"><%= review.created_at.to_i %></span>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="dashboard-thumbnails">
