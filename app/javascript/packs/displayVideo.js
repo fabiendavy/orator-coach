@@ -6,12 +6,12 @@ const displayVideo = () => {
     "Speak slower": '<div class="bad-review">😢</div>',
     "Speak louder": '<div class="bad-review">😢</div>',
     "Look at us": '<div class="bad-review">😢</div>',
-    "Stay still": '<div class="bad-review">🕴😢</div>',
+    "Stay still": '<div class="bad-review">😢</div>',
     "Smile": '<div class="bad-review">😢</div>',
     "Great pace": '<div class="good-review">😍</div>',
     "Great tone": '<div class="good-review">😍</div>',
     "Good eye contact": '<div class="good-review">😍</div>',
-    "Good gesture": '<div class="good-review">🕺😍</div>',
+    "Good gesture": '<div class="good-review">😍</div>',
     "Nice smile": '<div class="good-review">😍</div>'
   };
 
