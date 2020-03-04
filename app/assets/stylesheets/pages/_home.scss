@@ -42,12 +42,26 @@
   .cards {
     grid-template-columns: 1fr;
   }
+  .banner {
+    padding-left: 40px;
+    padding-top: 30px;
+  }
+  .banner h1 {
+    font-size: 60px;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+  .banner {
+    padding-left: 50px;
+    padding-top: 40px;
+  }
+  .banner h1 {
+    font-size: 90px;
   }
 }
 
