@@ -1,14 +1,18 @@
 <style>.navbar{display: none}</style>
 
 
-<div class="grid-container">
-  <div class="final-review">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
 
-        <%= simple_form_for @observer do |f| %>
-          <%= f.input :final_review, label: false, placeholder: "What did you think about the speaker's performance?", class: "text-field", id: "final-validation-field" %>
-          <%= f.submit "Validate feedback", class: "review-btn" %>
-        <% end %>
+  <%= simple_form_for @observer do |f| %>
 
+      <%= f.input :final_review, label: false, placeholder: "What did you think about the speaker's performance?", id: "final-validation-field" %>
+
+      <%= f.submit "Validate feedback", class: "final-review-btn" %>
+
+  <% end %>
+    </div>
   </div>
 </div>
 

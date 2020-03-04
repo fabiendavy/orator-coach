@@ -1,7 +1,4 @@
-const reviewButtons = document.querySelectorAll(".btn-div")
-// const badges = document.querySelectorAll(".badge-count")
-
-
+const reviewButtons = document.querySelectorAll(".relative")
 
 const initBadge = () => {
 
@@ -11,6 +8,7 @@ const initBadge = () => {
     item.addEventListener("click", (event) => {
       badge.style.display = "flex";
       badgeCount += 1;
+      console.log(badgeCount);
       badge.innerText = badgeCount;
     });
   });
