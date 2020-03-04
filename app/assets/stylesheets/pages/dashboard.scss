@@ -42,8 +42,22 @@
   // background-color: green;
   grid-column: 5 / 7;
   grid-row: 1 / 6;
-  margin: 10px 40px;
+  margin: 0px 20px;
+  background-color: $light-gray;
 }
+
+.dashboard-comments h3 {
+  // background-color: green;
+  text-align: left;
+  font-family: "Rubik";
+  font-size: 24px;
+  font-weight: bold;
+  color: $light-gray;
+  background-color: $dark-gray;
+  width: 100%;
+  padding: 20px 0px;
+}
+
 
 .dashboard-thumbnails {
   // background-color: pink;
@@ -112,12 +126,12 @@
 
 @keyframes bubbleMove {
   0%   {
-    bottom: 0%; 
+    bottom: 0%;
     opacity: 1;
   }
   50%  {
     opacity: 1;
-    bottom: 50%; 
+    bottom: 50%;
   }
   80% {
     opacity: 1;

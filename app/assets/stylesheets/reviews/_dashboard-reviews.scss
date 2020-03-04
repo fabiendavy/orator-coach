@@ -4,7 +4,7 @@
 
 
 .dashboard-comments .review {
-  border: 1px solid $light-green;
+  // border: 1px solid $light-green;
   margin: 10px 10px;
   padding: 10px 10px;
   background-color: $light-gray;
@@ -42,4 +42,9 @@
 .review-timestamp {
   color: $light-green;
   font-size: 18px;
+}
+
+.review i {
+  color: $light-green;
+  font-size: 24px;
 }
