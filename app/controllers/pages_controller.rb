@@ -17,16 +17,13 @@ class PagesController < ApplicationController
   end
 
   def stats
+    # Polar area chart
     @recordings_number_speaker = Recording.where(speaker: current_user).count
     @recordings_number_observer = Observer.where(user: current_user).count
     @comments_received_number = get_comments_received
     @comments_given_number = get_comments_given
     @reviews_type_count = count_reviews_type
   end
-
-  # def library
-
-  # end
 
   private
 
@@ -81,11 +78,4 @@ class PagesController < ApplicationController
 
     reviews_count
   end
-
-  def final_review
-    # @recording = Recording.find()
-    # @observers = Recording.observers
-
-  end
-
 end
