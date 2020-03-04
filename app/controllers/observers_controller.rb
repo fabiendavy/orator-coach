@@ -14,7 +14,7 @@ before_action :set_observer, only:[ :update, :final_review ]
     # Get access_key entered by observer and search for corresponding recording
     @input_key = params[:observer][:client_key]
     @recording = Recording.find_by(access_key: @input_key)
-    
+
     # If the key entered by the observer matches a recording key, then create a new observer, else render new
     if @recording
       # Set keys of the observer instance
@@ -29,14 +29,12 @@ before_action :set_observer, only:[ :update, :final_review ]
 
 
   def update
-    # @observer = Observer.find(params[:id])
     @observer.final_review = params[:observer][:final_review]
     @observer.save
     redirect_to '/dashboard'
   end
 
   def final_review
-    # @observer = Observer.find(params[:id])
   end
 
   private
