@@ -16,16 +16,16 @@ const displayVideo = () => {
   };
 
   const reviewsIcons = {
-    "Speak slower": '<i class="fas fa-bullhorn"></i> <i class="fas fa-minus"></i>',
-    "Speak louder": '<i class="fas fa-bullhorn"></i> <i class="fas fa-plus"></i>',
-    "Look at us": '<i class="fas fa-eye"></i> <i class="fas fa-plus"></i>',
-    "Stay still": '<i class="fas fa-male"></i> <i class="fas fa-plus"></i>',
-    "Smile": '<i class="fas fa-smile"></i> <i class="fas fa-plus"></i>',
-    "Great pace": '<i class="fas fa-volume-up"></i> <i class="fas fa-thumbs-up"></i>',
-    "Great tone": '<i class="fas fa-volume-up"></i> <i class="fas fa-thumbs-up"></i>',
-    "Good eye contact": '<i class="fas fa-eye"></i> <i class="fas fa-thumbs-up"></i>',
-    "Good gesture": '<i class="fas fa-walking"></i> <i class="fas fa-thumbs-up"></i>',
-    "Nice smile": '<i class="fas fa-smile"></i> <i class="fas fa-thumbs-up"></i>'
+    "Speak slower": '<i class="fas fa-thumbs-down"></i>',
+    "Speak louder": '<i class="fas fa-thumbs-down"></i>',
+    "Look at us": '<i class="fas fa-thumbs-down"></i>',
+    "Stay still": '<i class="fas fa-thumbs-down"></i>',
+    "Smile": '<i class="fas fa-thumbs-down"></i>',
+    "Great pace": '<i class="fas fa-thumbs-up"></i>',
+    "Great tone": '<i class="fas fa-thumbs-up"></i>',
+    "Good eye contact": '<i class="fas fa-thumbs-up"></i>',
+    "Good gesture": '<i class="fas fa-thumbs-up"></i>',
+    "Nice smile": '<i class="fas fa-thumbs-up"></i>'
   };
 
   if (videos && videoDiv) {
