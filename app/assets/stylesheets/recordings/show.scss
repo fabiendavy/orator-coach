@@ -31,6 +31,10 @@
   }
   #btn-start, #btn-stop {
     color: $light-green;
+    border-radius: 8px;
+    &:hover {
+      box-shadow: 0 0 10px $light-green;
+    }
   }
   #btn-to-pending {
     padding: 10px 20px;

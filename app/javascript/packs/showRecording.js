@@ -10,7 +10,7 @@ const recordVideo = () => {
 
   if (validateBtn) {
     validateBtn.addEventListener('click', (event) => {
-      title.innerText = 'LAUNCH RECORDING';
+      title.innerText = '';
       accessKey.style.display = "none";
       validateBtn.style.display = "none";
       startBtn.style.display = 'block';
