@@ -1,8 +1,3 @@
-.dashboard-reviews {
-  background-color: $dark-gray;
-  padding-top: 30px;
-}
-
 .observer-list h3 {
   text-align: left;
   font-family: "Rubik";
@@ -13,8 +8,8 @@
 }
 
 .observer-list {
-  width: 40%;
-  padding-left: 20px;
+  width: 100%;
+  // padding: 20px;
   overflow: auto;
   height: 300px;
 }
@@ -30,8 +25,8 @@
   background-color: $dark-gray;
   color: $light-green;
   font-family: "Karla";
-  width: 100%;
-  margin-left: 20px;
+  // width: 100%;
+  // margin-left: 20px;
   padding: 0 20px;
   height: 300px;
   overflow: auto;
@@ -48,7 +43,7 @@
 .nav-item a {
   background-color: $light-green;
   color: $dark-gray;
-  margin: 10px 0;
+  // margin: 10px 0;
   border-radius: 30px !important;
   text-decoration: none;
   font-weight: bold;
