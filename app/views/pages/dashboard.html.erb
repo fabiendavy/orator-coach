@@ -21,11 +21,11 @@
             <% @observers.each_with_index do |observer, index| %>
               <% if index == 0 %>
                 <li class="nav-item">
-                  <a class="nav-link active" id="<%= "v-pills-#{observer.id}-tab" %>" data-toggle="pill" href="#<%= "v-pills-#{observer.id}" %>" role="tab" aria-controls="<%= "v-pills-#{observer.id}" %>" aria-selected="false" > <%= observer.user.email %> </a>
+                  <a class="nav-link active" id="<%= "v-pills-#{observer.id}-tab" %>" data-toggle="pill" href="#<%= "v-pills-#{observer.id}" %>" role="tab" aria-controls="<%= "v-pills-#{observer.id}" %>" aria-selected="false" > <%= observer.user.first_name %> </a>
                 </li>
               <% else %>
                 <li class="nav-item">
-                <a class="nav-link" id="<%= "v-pills-#{observer.id}-tab" %>" data-toggle="pill" href="#<%= "v-pills-#{observer.id}" %>" role="tab" aria-controls="<%= "v-pills-#{observer.id}" %>" aria-selected="false" > <%= observer.user.email %> </a>
+                <a class="nav-link" id="<%= "v-pills-#{observer.id}-tab" %>" data-toggle="pill" href="#<%= "v-pills-#{observer.id}" %>" role="tab" aria-controls="<%= "v-pills-#{observer.id}" %>" aria-selected="false" > <%= observer.user.first_name %> </a>
               <% end %>
             <% end %>
           <% end %>
