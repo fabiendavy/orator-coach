@@ -1,29 +1,39 @@
 import Chart from 'chart.js';
 
+const REVIEWS_TYPE = ['Speak slower',
+                      'Great pace',
+                      'Speak louder',
+                      'Great tone',
+                      'Look at observers',
+                      'Good eye contact',
+                      'Stay still',
+                      'Good gesture',
+                      'Smile',
+                      'Nice smile'];
+
+const REVIEWS_TYPE_SIMPLE = ['Pace',
+                             'Tone',
+                             'Eye contact',
+                             'Body language',
+                             'Smile'];
+
+const BACKGROUND_COLOR_CHART2 = 'rgba(0, 0, 0, 0.0)'
+
 const executeChart = () => {
-  const chartDiv = document.getElementById('chart');
+  const chartDiv1 = document.getElementById('chart1');
 
-  if (chartDiv) {
-    const ctx = document.getElementById('myChart').getContext('2d');
+  if (chartDiv1) {
+    const ctx = document.getElementById('myChart1').getContext('2d');
 
-    const reviewsType = JSON.parse(chartDiv.dataset.reviews);
+    const reviewsType = JSON.parse(chartDiv1.dataset.reviews);
     const reviewsValues = Object.values(reviewsType)
 
     Chart.defaults.global.defaultFontColor = '#8bbaba';
 
-    const myChart = new Chart(ctx, {
+    const myChart1 = new Chart(ctx, {
       type: 'polarArea',
       data: {
-        labels: ['Speak slower',
-                 'Great pace',
-                 'Speak louder',
-                 'Great tone',
-                 'Look at observers',
-                 'Good eye contact',
-                 'Stay still',
-                 'Good gesture',
-                 'Smile',
-                 'Nice smile'],
+        labels: REVIEWS_TYPE,
         datasets: [{
           label: '# of Reviews',
           data: reviewsValues,
@@ -70,6 +80,50 @@ const executeChart = () => {
             },
           }],
         }
+      }
+    });
+  }
+
+  const chartDiv2 = document.getElementById('chart2');
+
+  if (chartDiv2) {
+    const ctx2 = document.getElementById('myChart2').getContext('2d');
+
+    const myChart2 = new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['Session 1', 'Session 2', 'Session 3', 'Session 4', 'Session 5'],
+        datasets: [{
+          label: REVIEWS_TYPE_SIMPLE[0],
+          data: [0, 1, 3, 5, 2],
+          borderColor: 'rgba(255, 99, 132, 1)',
+          backgroundColor: BACKGROUND_COLOR_CHART2,
+          borderWidth: 1
+        }, {
+          label: REVIEWS_TYPE_SIMPLE[1],
+          data: [3, 3, 9, 15, 17],
+          borderColor: 'rgba(54, 162, 235, 1)',
+          backgroundColor: BACKGROUND_COLOR_CHART2,
+          borderWidth: 1
+        }, {
+          label: REVIEWS_TYPE_SIMPLE[2],
+          data: [4, 2, 7, 8, 15],
+          borderColor: 'rgba(255, 206, 86, 1)',
+          backgroundColor: BACKGROUND_COLOR_CHART2,
+          borderWidth: 1
+        }, {
+          label: REVIEWS_TYPE_SIMPLE[3],
+          data: [2, 4, 6, 13, 12],
+          borderColor: 'rgba(150, 199, 32, 1)',
+          backgroundColor: BACKGROUND_COLOR_CHART2,
+          borderWidth: 1
+        }, {
+          label: REVIEWS_TYPE_SIMPLE[4],
+          data: [1, 5, 6, 10, 13],
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: BACKGROUND_COLOR_CHART2,
+          borderWidth: 1
+        }]
       }
     });
   }
