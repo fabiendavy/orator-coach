@@ -1,69 +1,84 @@
 <style>.navbar{display: none}</style>
-
-
-<div class="grid-container new-review">
-  <div class="new-review">
-
-    <!-- <h1 class="text-center">LIVE FEEDBACK</h1> -->
-
-      <div class="review-choice" id="list-of-review-types" data-sweet=<%= @sweet %>>
         <%= simple_form_for([@observer, @review], remote: true) do |f| %>
 
-          <div class="reviews-grid">
-            <i class="far fa-thumbs-down"></i>
-            <i class="far fa-thumbs-up"></i>
-            <div class="relative btn-div">
+      <div class="grid-container" id="list-of-review-types" data-sweet=<%= @sweet %>>
 
+          <div class="review-grid-labels">
+            <div class="label"><h3>Pace</h3></div>
+            <div class="label"><h3>Tone</h3></div>
+            <div class="label"><h3>Eye contact</h3></div>
+            <div class="label"><h3>Gesture</h3></div>
+            <div class="label"><h3>Smile</h3></div>
+          </div>
+
+
+          <div class="review-grid-negative">
+
+            <div class="relative">
               <%= f.submit "Speak slower", class: "review-btn" %>
+              <i class="far fa-thumbs-down"></i>
               <span class="badge-count"></span>
             </div>
-            <div class="relative btn-div">
-              <%= f.submit "Great pace", class: "review-btn" %>
-              <span class="badge-count"></span>
-            </div>
-            <div class="relative btn-div">
+
+            <div class="relative">
+              <i class="far fa-thumbs-down"></i>
               <%= f.submit "Speak louder", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
-            <div class="relative btn-div">
-              <%= f.submit "Great tone", class: "review-btn" %>
-              <span class="badge-count"></span>
-            </div>
-            <div class="relative btn-div">
+
+            <div class="relative">
+              <i class="far fa-thumbs-down"></i>
               <%= f.submit "Look at us", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
-            <div class="relative btn-div">
-              <%= f.submit "Good eye contact", class: "review-btn" %>
-              <span class="badge-count"></span>
-            </div>
-            <div class="relative btn-div">
+
+            <div class="relative">
+              <i class="far fa-thumbs-down"></i>
               <%= f.submit "Stay still", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
-            <div class="relative btn-div">
-              <%= f.submit "Good gesture", class: "review-btn" %>
-              <span class="badge-count"></span>
-            </div>
-            <div class="relative btn-div">
+
+            <div class="relative">
+              <i class="far fa-thumbs-down"></i>
               <%= f.submit "Smile", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
-            <div class="relative btn-div">
-              <%= f.submit "Nice smile", class: "review-btn" %>
 
+          </div>
+
+
+          <div class="review-grid-positive">
+            <div class="relative">
+              <i class="far fa-thumbs-up"></i>
+              <%= f.submit "Great pace", class: "review-btn" %>
+              <span class="badge-count"></span>
+            </div>
+            <div class="relative">
+              <i class="far fa-thumbs-up"></i>
+              <%= f.submit "Great tone", class: "review-btn" %>
+              <span class="badge-count"></span>
+            </div>
+            <div class="relative">
+              <i class="far fa-thumbs-up"></i>
+              <%= f.submit "Good eye contact", class: "review-btn" %>
+              <span class="badge-count"></span>
+            </div>
+            <div class="relative">
+              <i class="far fa-thumbs-up"></i>
+              <%= f.submit "Good gesture", class: "review-btn" %>
+              <span class="badge-count"></span>
+            </div>
+            <div class="relative">
+              <i class="far fa-thumbs-up"></i>
+              <%= f.submit "Nice smile", class: "review-btn" %>
               <span class="badge-count"></span>
             </div>
           </div>
 
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center terminate">
             <%= link_to "TERMINATE ", final_review_observer_path(@observer), class: "d-flex review-validation-btn justify-content-center align-items-center", id: "final-review-button" %>
           </div>
 
-        <% end %>
       </div>
-
-
-  </div>
-</div>
+        <% end %>
 

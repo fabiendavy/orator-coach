@@ -1,7 +1,14 @@
-.review-btn:hover {
-  box-shadow: 0 0 10px $light-green;
+#observer_client_key {
+  width: 100% !important;
+  height: 60px !important;
+  border-radius: 5px;
+  padding: 20px 0;
 }
 
-#final-review-button:hover {
-  box-shadow: 0 0 10px $light-green;
+// #new_observer {
+//   width: 100% !important;
+// }
+
+#enter-speech-password {
+    width: 100%;
 }
