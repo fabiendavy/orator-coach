@@ -4,8 +4,8 @@ const videoRecording = () => {
     audio: true,
     video: {
       facingMode: "user",
-      width: { min: 640, ideal: 1280, max: 1920 },
-      height: { min: 480, ideal: 720, max: 1080 }
+      width: { min: 640, ideal: 400, max: 1920 },
+      height: { min: 480, ideal: 200, max: 1080 }
     }
   };
 
