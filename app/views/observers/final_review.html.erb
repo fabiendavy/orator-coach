@@ -7,7 +7,7 @@
 
   <%= simple_form_for @observer do |f| %>
 
-      <%= f.input :final_review, label: false, placeholder: "What did you think about the speaker's performance?", id: "final-validation-field" %>
+      <%= f.input :final_review, label: false, placeholder: "What did you think about the speaker's performance?", id: "final-validation-field", class: "add-review-btn" %>
 
       <%= f.submit "Validate feedback", class: "final-review-btn" %>
 
