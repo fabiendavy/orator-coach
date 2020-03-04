@@ -71,5 +71,21 @@ Ressource.create!(
                   thumbnail: "https://miro.medium.com/max/8064/1*cDN8TZwsJQashmm-26GMvg.jpeg",
                   keyword: "medium jason"
                  )
+Ressource.create!(
+                  title: "Your speech pace: guide to speeding and slowing down",
+                  description: "While in your head you might think your pace is perfect, in reality, you might be off the mark. Find out how your speech rates can be helpful.",
+                  ressource_url: "https://medium.com/@speakerhubHQ/your-speech-pace-guide-to-speeding-and-slowing-down-be150dcb9cd7",
+                  img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlbb99hnSjACfmttoF6fztWvz3G4ACTGJI-ewARVfiBF0jlpcN",
+                  thumbnail: "https://miro.medium.com/max/2040/1*z-fcI9IWizKAw3O5QlJsxg.png",
+                  keyword: "pace improve speech speed"
+                 )
+Ressource.create!(
+                  title: "Public Speaking Tips: Slow Down Speed Talking",
+                  description: "Does your message get lost because you talk too fast? Diane gives practical advice to slow down speed talking.",
+                  ressource_url: "https://www.youtube.com/watch?v=_bFY7FNQs98",
+                  img_url: "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
+                  thumbnail: "https://images.squarespace-cdn.com/content/v1/584471bcd2b857fe8823846d/1516822982831-80V90VAQ7CWJDEA36PWB/ke17ZwdGBToddI8pDm48kHR4GG3XllZh4N4Ja8ejnrVZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFBPOr_La2lbRBDZCw3FD88gYPxqvBzfwRgxsanJJUMGfwiC9WWBbkwEQBcguk_87w/video+thumb.jpg?format=1000w",
+                  keyword: "pace improve speech speed"
+                 )
 
 puts "Seed succesfully completed!"
