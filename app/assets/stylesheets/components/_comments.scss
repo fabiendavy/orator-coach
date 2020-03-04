@@ -46,13 +46,18 @@
 }
 
 .nav-item a {
-  color: $light-green;
-  border: 1px solid $light-green;
+  background-color: $light-green;
+  color: $dark-gray;
   margin: 10px 0;
+  border-radius: 30px !important;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .nav-pills .nav-link.active {
-  background-color: $light-gray;
+  background-color: $dark-green;
+  text-decoration: none;
+  color: $white;
 }
 
 
