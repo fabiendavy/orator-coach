@@ -138,7 +138,7 @@
     background-size: cover;
     margin: 0 10px;
     width: 175px;
-    height: 100px;
+    height: 80px;
     flex: none;
     text-align: center;
     filter: brightness(60%);
@@ -168,45 +168,48 @@
 
 .good-review, .bad-review {
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
-  width: 100px;
+  width: 50px;
   text-align: right;
   font-weight: lighter;
-  font-size: 50px;
+  font-size: 25px;
   border-radius: 50px;
   padding: 8px;
   z-index: 3;
   animation: bubbleMove 5s;
   opacity: 0;
-  color: $dark-gray;
+  color: $light-green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bad-review {
-  background-color: rgba(187, 85, 85, 0.7);
+  background-color: rgba(187, 85, 85, 1);
 }
 
 .good-review {
-  background-color: rgba(88, 158, 88, 0.7);
+  background-color: rgba(88, 158, 88, 1);
 }
 
 @keyframes bubbleMove {
   0%   {
-    bottom: 0%;
+    top: 0%;
     opacity: 1;
   }
   50%  {
     opacity: 1;
-    bottom: 50%;
+    top: 50%;
   }
-  80% {
+  90% {
     opacity: 1;
   }
-  81% {
+  95% {
     opacity: 0;
   }
   100% {
-    bottom: 100%;
+    top: 100%;
     opacity: 0;
   }
 }
