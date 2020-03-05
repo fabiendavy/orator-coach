@@ -3,16 +3,16 @@ const displayVideo = () => {
   const videos = document.querySelectorAll('.video');
 
   const animIcons = {
-    "Speak slower": '<div class="bad-review">😢</div>',
-    "Speak louder": '<div class="bad-review">😢</div>',
-    "Look at us": '<div class="bad-review">😢</div>',
-    "Stay still": '<div class="bad-review">😢</div>',
-    "Smile": '<div class="bad-review">😢</div>',
-    "Great pace": '<div class="good-review">😍</div>',
-    "Great tone": '<div class="good-review">😍</div>',
-    "Good eye contact": '<div class="good-review">😍</div>',
-    "Good gesture": '<div class="good-review">😍</div>',
-    "Nice smile": '<div class="good-review">😍</div>'
+    "Speak slower": '<div class="bad-review"><i class="fas fa-tachometer-alt"></i></div>',
+    "Speak louder": '<div class="bad-review"><i class="fas fa-bullhorn"></i></div>',
+    "Look at us": '<div class="bad-review"><i class="fas fa-eye"></i></div>',
+    "Stay still": '<div class="bad-review"><i class="fas fa-sign-language"></i></div>',
+    "Smile": '<div class="bad-review"><i class="far fa-smile"></i></div>',
+    "Great pace": '<div class="good-review"><i class="fas fa-tachometer-alt"></i></div>',
+    "Great tone": '<div class="good-review"><i class="fas fa-bullhorn"></i></div>',
+    "Good eye contact": '<div class="good-review"><i class="fas fa-eye"></i></div>',
+    "Good gesture": '<div class="good-review"><i class="fas fa-sign-language"></i></div>',
+    "Nice smile": '<div class="good-review"><i class="far fa-smile"></i></div>'
   };
 
   const reviewsIcons = {
@@ -61,7 +61,7 @@ const displayVideo = () => {
     reviewsType.forEach((review) => {
       types.push(review.innerText);
     });
-    
+
     let vplayer = cld.videoPlayer("video-display", { playedEventTimes: [...Array(121).keys()] });
     vplayer.on('timeplayed', (event) => {
       // console.log(event.eventData.time);
@@ -70,7 +70,7 @@ const displayVideo = () => {
           const html = `<div class="review"><span style="width: 25%;">${reviewsIcons[types[index]]}</span><span class="review-type" style="width: 75%;">${types[index]}</span> <span class="review-timestamp">${timeConverter(item)}</span></div>`;
           commentsDiv.insertAdjacentHTML('beforeend', html);
           animCommentsDiv.insertAdjacentHTML('beforeend', animIcons[types[index]]);
-        } 
+        }
       });
     })
 
