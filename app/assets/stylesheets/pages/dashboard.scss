@@ -185,11 +185,24 @@
   align-items: center;
 }
 
-.bad-review {
+.good-review-list, .bad-review-list {
+  width: 50px;
+  font-weight: lighter;
+  font-size: 25px;
+  border-radius: 50px;
+  padding: 8px;
+  z-index: 3;
+  color: $light-green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bad-review, .bad-review-list {
   background-color: rgba(187, 85, 85, 1);
 }
 
-.good-review {
+.good-review, .good-review-list {
   background-color: rgba(88, 158, 88, 1);
 }
 
