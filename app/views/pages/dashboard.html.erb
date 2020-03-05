@@ -32,8 +32,11 @@
   </div>
 
   <div class="dashboard-reviews">
+    <h3>Comments</h3>
+  </div>
+
+  <div class="final-review-box">
     <div class="tab-content" id="v-pills-tabContent">
-      <h3>Comments</h3>
       <% if @observers %>
           <% @observers.each_with_index do |observer, index| %>
             <% if index == 0 %>
