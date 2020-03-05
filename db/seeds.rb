@@ -87,5 +87,14 @@ Ressource.create!(
                   thumbnail: "https://images.squarespace-cdn.com/content/v1/584471bcd2b857fe8823846d/1516822982831-80V90VAQ7CWJDEA36PWB/ke17ZwdGBToddI8pDm48kHR4GG3XllZh4N4Ja8ejnrVZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFBPOr_La2lbRBDZCw3FD88gYPxqvBzfwRgxsanJJUMGfwiC9WWBbkwEQBcguk_87w/video+thumb.jpg?format=1000w",
                   keyword: "pace improve speech speed"
                  )
+Ressource.create!(
+                  title: "The Importance of Pace and The Power of Pause",
+                  description: "A speedy delivery can be very effective when you have great news to share with friends, but it’s decidedly less so when you’re pitching new business or trying to impress a senior executive.",
+                  ressource_url: "https://podiumconsulting.com/the-podium-project/2015/10/4/the-importance-of-pace-and-the-power-of-pause",
+                  img_url: "https://static1.squarespace.com/static/54527565e4b09c9c97c3123f/t/57eb272a15d5dbca6f4c0765/1550842610383/?format=1500w",
+                  thumbnail: "https://images.squarespace-cdn.com/content/v1/54527565e4b09c9c97c3123f/1444014808924-BLVISX2VRKK02OH2LUI6/ke17ZwdGBToddI8pDm48kAJsswp0EXV6qc0SOJ8DOsUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKc_E7dXkCi7l7eF32s1E_vQW45WD95yMX6bcbEP6L1pnbQgytvpF9JKWwbDEjqe30p/image-asset.jpeg?format=1500w",
+                  keyword: "pace improve speech speed"
+                 )
+
 
 puts "Seed succesfully completed!"
