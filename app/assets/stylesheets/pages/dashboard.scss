@@ -123,7 +123,7 @@
       margin-top: 7px;
     }
   }
-  
+
   .dashboard-thumbnails-scroll {
     width: 100%;
     align-items: center;
@@ -131,7 +131,7 @@
     overflow-x: scroll;
     height: 100%;
   }
-  
+
   .video {
     position: relative;
     background-position: center;
@@ -179,13 +179,15 @@
   z-index: 3;
   animation: bubbleMove 5s;
   opacity: 0;
+  color: $dark-gray;
 }
 
 .bad-review {
-  color: rgb(175, 0, 0);
+  background-color: rgba(187, 85, 85, 0.7);
 }
+
 .good-review {
-  color: rgba(0, 139, 0, 0.705);
+  background-color: rgba(88, 158, 88, 0.7);
 }
 
 @keyframes bubbleMove {
