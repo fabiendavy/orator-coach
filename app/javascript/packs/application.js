@@ -7,7 +7,6 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
 require("chartkick")
 require("chart.js")
 
@@ -33,15 +32,13 @@ import { initSweetalert } from '../plugins/init_sweet_alert';
 import { initBadge } from '../plugins/init_badges';
 import { initComment } from '../plugins/init_comments';
 
-
-
 document.addEventListener('turbolinks:load', () => {
   executeChart();
   videoRecording();
+  dropDownVideos();
   recordVideo();
   displayVideo();
   initSweetalert();
   initBadge();
-  dropDownVideos();
   initComment();
 });

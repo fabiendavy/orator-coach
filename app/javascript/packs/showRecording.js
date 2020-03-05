@@ -5,8 +5,7 @@ const recordVideo = () => {
   const startBtn = document.getElementById('btn-start');
   const stopBtn = document.getElementById('btn-stop');
   const video = document.getElementById('record-video');
-  // const finalVideo = document.getElementById('final-video');
-  // const backDashboard = document.getElementById('dashboard-back');
+  const spinner = document.querySelector('.lds-roller');
 
   if (validateBtn) {
     validateBtn.addEventListener('click', (event) => {
@@ -31,8 +30,7 @@ const recordVideo = () => {
       title.innerText = '';
       stopBtn.style.display = 'none';
       video.style.display = "none";
-      // finalVideo.style.display = "block";
-      // backDashboard.style.display = 'flex';
+      spinner.style.display = "block";
     });
   }
 };
