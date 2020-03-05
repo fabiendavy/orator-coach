@@ -87,6 +87,8 @@ const executeChart = () => {
   const chartDiv2 = document.getElementById('chart2');
 
   if (chartDiv2) {
+    Chart.defaults.global.defaultFontSize = 20;
+    Chart.defaults.global.defaultFontColor = '#8BBABA';
     const ctx2 = document.getElementById('myChart2').getContext('2d');
 
     const myChart2 = new Chart(ctx2, {
@@ -124,6 +126,20 @@ const executeChart = () => {
           backgroundColor: BACKGROUND_COLOR_CHART2,
           borderWidth: 1
         }]
+      },
+      options: {
+        legend: {
+          labels: {
+            fontSize: 20,
+            fontColor: '#8BBABA'
+          }
+        },
+        scales: {
+          scaleLlabels: {
+            fontSize: 18,
+            fontColor: '#8BBABA'
+          }
+        }
       }
     });
   }

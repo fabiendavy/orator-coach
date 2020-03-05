@@ -1,43 +1,45 @@
 <div class="container justify-content-between">
   <div class="row">
-    <div class="col">
-      <div class="stats-list">
-
-        <div class="card-product">
-          <i class="fas fa-video"></i>
-          <div class="card-product-infos">
-            <span class="text">You participated in </span><span class="number"><%= "#{@recordings_number_speaker}" %></span><span class="text"> sessions as speaker.</span>
-          </div>
+    <div class="col-3">
+      <div class="card-product">
+        <i class="fas fa-video"></i>
+        <div class="card-product-infos">
+          <span class="text">You participated in </span><span class="number"><%= "#{@recordings_number_speaker}" %></span><span class="text"> sessions as speaker.</span>
         </div>
+      </div>
+    </div>
 
+      <div class="col-3">
         <div class="card-product">
           <i class="fas fa-users"></i>
           <div class="card-product-infos">
             <span class="text">You participated in </span><span class="number"><%= "#{@recordings_number_observer}" %></span><span class="text"> sessions as observer.</span>
           </div>
         </div>
+      </div>
 
+      <div class="col-3">
         <div class="card-product">
           <i class="far fa-comments"></i>
           <div class="card-product-infos">
             <span class="text">You received </span><span class="number"><%= "#{@comments_received_number}" %></span><span class="text"> feedbacks.</span>
           </div>
         </div>
+      </div>
 
-        <div class="card-product">
-          <i class="far fa-thumbs-up"></i>
-          <div class="card-product-infos">
-            <span class="text">You gave </span><span class="number"><%= "#{@comments_given_number}" %></span><span class="text"> feedbacks. Thanks!</span>
-          </div>
+    <div class="col-3">
+      <div class="card-product">
+        <i class="far fa-thumbs-up"></i>
+        <div class="card-product-infos">
+          <span class="text">You gave </span><span class="number"><%= "#{@comments_given_number}" %></span><span class="text"> feedbacks. Thanks!</span>
         </div>
-
       </div>
     </div>
-    <div class="col">
+    <!-- <div class="col">
       <div id="chart1" data-reviews="<%= @reviews_type_count.to_json %>">
         <canvas id="myChart1" width="400" height="400"></canvas>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <div class="row">
