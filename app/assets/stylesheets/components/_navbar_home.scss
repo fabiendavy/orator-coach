@@ -3,8 +3,9 @@
 }
 
 .green-link-home-dashboard {
-  color: $light-green;
-  background-color: rgba(255,255,255,0.3);
+  color: $dark-gray;
+  font-weight: bold;
+  background-color: rgba(255,255,255,0.7);
   text-decoration: none;
   border-radius: 30px;
   padding: 15px 20px;
@@ -18,8 +19,9 @@
 }
 
 .green-link-home-stats {
-  color: $light-green;
-  background-color: rgba(255,255,255,0.3);
+  color: $dark-gray;
+  font-weight: bold;
+  background-color: rgba(255,255,255,0.7);
   text-decoration: none;
   border-radius: 30px;
   padding: 15px 30px;
@@ -33,8 +35,9 @@
 }
 
 .green-link-home-library {
-  color: $light-green;
-  background-color: rgba(255,255,255,0.3);
+  color: $dark-gray;
+  font-weight: bold;
+  background-color: rgba(255,255,255,0.7);
   text-decoration: none;
   border-radius: 30px;
   padding: 15px 30px;
@@ -50,10 +53,11 @@
 
 .green-button-home {
   color: $dark-gray;
-  background-color: rgba(199, 240, 219, 0.6);
+  font-weight: bold;
+  background-color: rgba(199, 240, 219, 0.8);
   border-radius: 30px;
   text-decoration: none;
-  padding: 15px;
+  padding: 18px 15px ;
   font-weight: bold;
   &:hover {
    background-color: $dark-green;
