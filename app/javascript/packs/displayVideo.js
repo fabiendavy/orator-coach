@@ -16,16 +16,16 @@ const displayVideo = () => {
   };
 
   const reviewsIcons = {
-    "Speak slower": '<i class="fas fa-thumbs-down"></i>',
-    "Speak louder": '<i class="fas fa-thumbs-down"></i>',
-    "Look at us": '<i class="fas fa-thumbs-down"></i>',
-    "Stay still": '<i class="fas fa-thumbs-down"></i>',
-    "Smile": '<i class="fas fa-thumbs-down"></i>',
-    "Great pace": '<i class="fas fa-thumbs-up"></i>',
-    "Great tone": '<i class="fas fa-thumbs-up"></i>',
-    "Good eye contact": '<i class="fas fa-thumbs-up"></i>',
-    "Good gesture": '<i class="fas fa-thumbs-up"></i>',
-    "Nice smile": '<i class="fas fa-thumbs-up"></i>'
+    "Speak slower": '<div class="bad-review-list"><i class="fas fa-tachometer-alt"></i></div>',
+    "Speak louder": '<div class="bad-review-list"><i class="fas fa-bullhorn"></i></div>',
+    "Look at us": '<div class="bad-review-list"><i class="fas fa-eye"></i></div>',
+    "Stay still": '<div class="bad-review-list"><i class="fas fa-sign-language"></i></div>',
+    "Smile": '<div class="bad-review-list"><i class="far fa-smile"></i></div>',
+    "Great pace": '<div class="good-review-list"><i class="fas fa-tachometer-alt"></i></div>',
+    "Great tone": '<div class="good-review-list"><i class="fas fa-bullhorn"></i></div>',
+    "Good eye contact": '<div class="good-review-list"><i class="fas fa-eye"></i></div>',
+    "Good gesture": '<div class="good-review-list"><i class="fas fa-sign-language"></i></div>',
+    "Nice smile": '<div class="good-review-list"><i class="far fa-smile"></i></div>'
   };
 
   if (videos && videoDiv) {
