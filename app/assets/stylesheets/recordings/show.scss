@@ -30,9 +30,12 @@
     display: none;
   }
   #btn-start, #btn-stop {
-    padding: 8px;
     color: $light-green;
     border-radius: 8px;
+    i {
+      padding: 16px;
+      margin: 0!important;
+    }
     &:hover {
       box-shadow: 0 0 10px $light-green;
     }
